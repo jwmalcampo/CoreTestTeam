@@ -1,0 +1,33 @@
+1761430112750	geckodriver	INFO	Listening on 127.0.0.1:63576
+1761430115823	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63577" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\jw_ma\\AppData\\Local\\Temp\\rust_mozprofileOofKnI"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1761430116128	Marionette	INFO	Marionette enabled
+1761430116195	Marionette	INFO	Listening on port 63585
+WebDriver BiDi listening on ws://127.0.0.1:63577
+Read port: 63585
+1761430116320	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+1761430146076	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
+TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
+1761430148546	Marionette	INFO	Stopped listening on port 63585
+Dynamically enable window occlusion 1
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+console.warn: services.settings: main/language-dictionaries sync interrupted by shutdown
+console.warn: services.settings: main/devtools-devices sync interrupted by shutdown
+console.warn: services.settings: main/doh-providers sync interrupted by shutdown
+console.warn: services.settings: main/hijack-blocklists sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+JavaScript error: resource://services-settings/IDBHelpers.sys.mjs, line 16: Error: IndexedDB: security-state/cert-revocations list() IndexedDB:  execute() The application is shutting down
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback

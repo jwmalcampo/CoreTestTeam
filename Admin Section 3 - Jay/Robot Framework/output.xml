@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.8.10 on win32)" generated="2025-10-26T07:42:12.500799" rpa="false" schemaversion="5">
+<suite id="s1" name="6 Tastyigniterv3 Generalsettings" source="c:\Users\jw_ma\Documents\5. Study in Australia\4. Study Period Sem 2 2025\PRT582 - Software Engineering Process and Tools\Assessment 3\Automated Tests - Robot Framework\6_tastyigniterv3_generalsettings.robot">
+<kw name="Go to Website" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:13.032779" level="INFO">Opening browser 'firefox' to base url 'http://localhost/TastyIgniter_v3/admin/login'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-26T07:42:13.032779" elapsed="7.962111"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:21.032846" level="INFO">Current page contains text 'Login'.</msg>
+<arg>Login</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-26T07:42:20.994890" elapsed="0.037956"/>
+</kw>
+<doc>This test case verify user is able to open the URL</doc>
+<status status="PASS" start="2025-10-26T07:42:13.031768" elapsed="8.001078"/>
+</kw>
+<test id="s1-t1" name="Login to your account" line="19">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-10-26T07:42:21.038663" elapsed="0.002012"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:21.042705" level="INFO">Typing text 'eyeksel' into text field 'username'.</msg>
+<arg>username</arg>
+<arg>eyeksel</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:21.040675" elapsed="0.661859"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:21.705243" level="INFO">Typing text 'Eyeksel@060499' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>Eyeksel@060499</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:21.703457" elapsed="0.632131"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:22.335588" level="INFO">Clicking button 'css=button.btn.btn-primary.btn-block'.</msg>
+<arg>css=button.btn.btn-primary.btn-block</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:22.335588" elapsed="1.096899"/>
+</kw>
+<status status="PASS" start="2025-10-26T07:42:21.032846" elapsed="2.400151"/>
+</test>
+<test id="s1-t2" name="Navigate and Update Details" line="24">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-10-26T07:42:23.438275" elapsed="0.001389"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[normalize-space()='System']</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-26T07:42:23.440669" elapsed="0.834440"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:24.275109" level="INFO">Clicking element 'xpath=//span[normalize-space()='System']'.</msg>
+<arg>xpath=//span[normalize-space()='System']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:24.275109" elapsed="0.474319"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a.nav-link.settings</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-26T07:42:24.749428" elapsed="0.422623"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:25.173481" level="INFO">Clicking element 'css=a.nav-link.settings'.</msg>
+<arg>css=a.nav-link.settings</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:25.173481" elapsed="1.382594"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:26.558077" level="INFO">Clicking element 'xpath=//a[.//h5[normalize-space()='General']]'.</msg>
+<arg>xpath=//a[.//h5[normalize-space()='General']]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:26.557078" elapsed="1.693023"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=form-field-setting-site-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-26T07:42:28.252101" elapsed="0.430892"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:28.685612" level="INFO">Clicking element 'id=form-field-setting-site-name'.</msg>
+<arg>id=form-field-setting-site-name</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:28.684108" elapsed="0.497745"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>id=form-field-setting-site-name</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:29.182861" elapsed="0.435034"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:29.619898" level="INFO">Typing text 'McDonald's' into text field 'id=form-field-setting-site-name'.</msg>
+<arg>id=form-field-setting-site-name</arg>
+<arg>McDonald's</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:29.618899" elapsed="0.651915"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:30.272884" level="INFO">Clicking element 'id=form-field-setting-site-email'.</msg>
+<arg>id=form-field-setting-site-email</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:30.271819" elapsed="0.493693"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>id=form-field-setting-site-email</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:30.766519" elapsed="0.433939"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:31.202968" level="INFO">Typing text 'mcdonalds@mcdo.com' into text field 'id=form-field-setting-site-email'.</msg>
+<arg>id=form-field-setting-site-email</arg>
+<arg>mcdonalds@mcdo.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:31.201962" elapsed="0.651749"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:31.855721" level="INFO">Clicking element 'xpath=//a[@data-request='onSave']'.</msg>
+<arg>xpath=//a[@data-request='onSave']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:31.854720" elapsed="0.493617"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>updated</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-26T07:42:32.349339" elapsed="1.072482"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-26T07:42:34.432972" level="INFO">Slept 1 second.</msg>
+<arg>1.0s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-26T07:42:33.423099" elapsed="1.010879"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2025-10-26T07:42:34.435142" level="INFO">Execution passed with message:
+Restaurant name and email updated successfully.</msg>
+<arg>Restaurant name and email updated successfully.</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2025-10-26T07:42:34.435142" elapsed="0.001005">Restaurant name and email updated successfully.</status>
+</kw>
+<status status="PASS" start="2025-10-26T07:42:23.432997" elapsed="11.004150">Restaurant name and email updated successfully.</status>
+</test>
+<test id="s1-t3" name="Revert Details" line="42">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-10-26T07:42:34.440153" elapsed="0.001506"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=form-field-setting-site-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-26T07:42:34.442667" elapsed="0.426324"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:34.870993" level="INFO">Clicking element 'id=form-field-setting-site-name'.</msg>
+<arg>id=form-field-setting-site-name</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:34.869993" elapsed="0.498131"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>id=form-field-setting-site-name</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:35.369128" elapsed="0.435171"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:35.806301" level="INFO">Typing text 'TastyIgniter' into text field 'id=form-field-setting-site-name'.</msg>
+<arg>id=form-field-setting-site-name</arg>
+<arg>TastyIgniter</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:35.805300" elapsed="0.650484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:36.457793" level="INFO">Clicking element 'id=form-field-setting-site-email'.</msg>
+<arg>id=form-field-setting-site-email</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:36.456791" elapsed="0.496617"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>id=form-field-setting-site-email</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:36.954924" elapsed="0.430995"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:37.387927" level="INFO">Typing text 'admin@domain.tld' into text field 'id=form-field-setting-site-email'.</msg>
+<arg>id=form-field-setting-site-email</arg>
+<arg>admin@domain.tld</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:37.386924" elapsed="0.638871"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-26T07:42:38.028796" level="INFO">Clicking element 'xpath=//a[@data-request='onSave']'.</msg>
+<arg>xpath=//a[@data-request='onSave']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-26T07:42:38.026795" elapsed="0.482817"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>updated</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-26T07:42:38.510939" elapsed="0.218046"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-26T07:42:39.739109" level="INFO">Slept 1 second.</msg>
+<arg>1.0s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-26T07:42:38.729992" elapsed="1.010123"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2025-10-26T07:42:39.742117" level="INFO">Execution passed with message:
+Restaurant name and email updated successfully.</msg>
+<arg>Restaurant name and email updated successfully.</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2025-10-26T07:42:39.741117" elapsed="0.001507">Restaurant name and email updated successfully.</status>
+</kw>
+<status status="PASS" start="2025-10-26T07:42:34.439149" elapsed="5.304413">Restaurant name and email updated successfully.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-26T07:42:39.745631" elapsed="3.000500"/>
+</kw>
+<doc>Login Functionality</doc>
+<status status="PASS" start="2025-10-26T07:42:12.511986" elapsed="30.234145"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="6 Tastyigniterv3 Generalsettings" id="s1" pass="3" fail="0" skip="0">6 Tastyigniterv3 Generalsettings</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
