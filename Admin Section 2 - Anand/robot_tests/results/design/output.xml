@@ -1,0 +1,2463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.2 on win32)" generated="2025-10-06T14:22:22.949393" rpa="false" schemaversion="5">
+<suite id="s1" name="Design Tests" source="C:\django website\robot_tests\tests\design_tests.robot">
+<kw name="Login To Admin" owner="customers_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:23.457699" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/admin'.</msg>
+<msg time="2025-10-06T14:22:23.688669" level="WARN">The chromedriver version (140.0.7339.208) detected in PATH at C:\Users\Anand\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (141.0.7390.54); currently, chromedriver 141.0.7390.54 is recommended for chrome 141.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${ADMIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:22:23.457699" elapsed="5.678972"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-06T14:22:29.136671" elapsed="0.053659"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:22:29.191326" elapsed="0.062133"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:29.254460" level="INFO">Typing text 'anand' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${ADMIN_USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:22:29.253459" elapsed="0.217987"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:29.471446" level="INFO">Typing text 'MySecurePass123!' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${ADMIN_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:22:29.471446" elapsed="0.209885"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:29.681331" level="INFO">Clicking button 'xpath://button[contains(text(), 'Login')]'.</msg>
+<arg>xpath://button[contains(text(), 'Login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:22:29.681331" elapsed="0.153809"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:22:29.835140" elapsed="4.918247"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:22:36.753523" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:22:34.753387" elapsed="2.000136"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:22:23.457699" elapsed="13.295824"/>
+</kw>
+<test id="s1-t1" name="TC_THEME_AUTO_001_View_Installed_Themes" line="18">
+<kw name="Navigate To Themes" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:36.754527" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/themes'</msg>
+<arg>${THEMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:22:36.754527" elapsed="3.777565"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Themes</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:22:40.532092" elapsed="0.060323"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:22:42.592527" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:22:40.592415" elapsed="2.000112"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:22:36.754527" elapsed="5.838000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:42.614628" level="INFO">Current page contains text 'Orange Theme'.</msg>
+<arg>Orange Theme</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:22:42.592527" elapsed="0.022101"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:42.657396" level="INFO">Current page contains text 'Demo Theme'.</msg>
+<arg>Demo Theme</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:22:42.614628" elapsed="0.042768"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:42.704002" level="INFO">Current page contains element 'xpath://a[contains(text(), 'Browse more themes')]'.</msg>
+<arg>xpath://a[contains(text(), 'Browse more themes')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:22:42.657396" elapsed="0.046606"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:42.753706" level="INFO">Current page contains element 'xpath://a[contains(text(), 'Check Updates')]'.</msg>
+<arg>xpath://a[contains(text(), 'Check Updates')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:22:42.706010" elapsed="0.047696"/>
+</kw>
+<doc>TC_THEME_001: Verify installed themes are visible</doc>
+<tag>smoke</tag>
+<tag>themes</tag>
+<status status="PASS" start="2025-10-06T14:22:36.753523" elapsed="6.000183"/>
+</test>
+<test id="s1-t2" name="TC_THEME_AUTO_002_Browse_Marketplace" line="27">
+<kw name="Navigate To Themes" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:42.757462" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/themes'</msg>
+<arg>${THEMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:22:42.757462" elapsed="3.604801"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Themes</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:22:46.362263" elapsed="0.027737"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:22:48.390594" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:22:46.390000" elapsed="2.000594"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:22:42.757462" elapsed="5.633132"/>
+</kw>
+<kw name="Click Browse More Themes" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(text(), 'Browse more themes')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:22:48.390594" elapsed="0.021276"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:48.411870" level="INFO">Clicking element 'xpath://a[contains(text(), 'Browse more themes')]'.</msg>
+<arg>xpath://a[contains(text(), 'Browse more themes')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:22:48.411870" elapsed="0.232715"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:22:51.646166" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:22:48.645602" elapsed="3.000884"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:22:48.390594" elapsed="3.255892"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:22:54.647817" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:22:51.647536" elapsed="3.000281"/>
+</kw>
+<doc>TC_THEME_002: Open marketplace themes</doc>
+<tag>functional</tag>
+<tag>themes</tag>
+<status status="PASS" start="2025-10-06T14:22:42.757462" elapsed="11.890355"/>
+</test>
+<test id="s1-t3" name="TC_THEME_AUTO_003_Check_Updates" line="34">
+<kw name="Navigate To Themes" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:54.647817" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/themes'</msg>
+<arg>${THEMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:22:54.647817" elapsed="2.351780"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Themes</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:22:56.999597" elapsed="0.024884"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:22:59.026046" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:22:57.025439" elapsed="2.000607"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:22:54.647817" elapsed="4.378229"/>
+</kw>
+<kw name="Click Check Updates" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(text(), 'Check Updates')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:22:59.026046" elapsed="0.040996"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:22:59.067042" level="INFO">Clicking element 'xpath://a[contains(text(), 'Check Updates')]'.</msg>
+<arg>xpath://a[contains(text(), 'Check Updates')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:22:59.067042" elapsed="2.205056"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:04.272832" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:01.272098" elapsed="3.000734"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:22:59.026046" elapsed="5.246786"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:07.273365" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:04.272832" elapsed="3.000533"/>
+</kw>
+<doc>TC_THEME_003: Check for theme updates</doc>
+<tag>functional</tag>
+<tag>themes</tag>
+<status status="PASS" start="2025-10-06T14:22:54.647817" elapsed="12.626564"/>
+</test>
+<test id="s1-t4" name="TC_THEME_AUTO_004_View_Theme_Details" line="41">
+<kw name="Navigate To Themes" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:07.278431" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/themes'</msg>
+<arg>${THEMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:23:07.278431" elapsed="2.495203"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Themes</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:09.773634" elapsed="0.023407"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:11.798266" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:09.798055" elapsed="2.000211"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:07.277435" elapsed="4.520831"/>
+</kw>
+<kw name="Click First Theme Card" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class, 'theme-card') or contains(@class, 'card')])[1]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:11.798266" elapsed="0.033240"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:11.831506" level="INFO">Clicking element 'xpath:(//div[contains(@class, 'theme-card') or contains(@class, 'card')])[1]'.</msg>
+<arg>xpath:(//div[contains(@class, 'theme-card') or contains(@class, 'card')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:11.831506" elapsed="0.118856"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:14.951001" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:11.950362" elapsed="3.000639"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:11.798266" elapsed="3.152735"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:16.951995" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:14.951001" elapsed="2.000994"/>
+</kw>
+<doc>TC_THEME_004: View theme details page</doc>
+<tag>functional</tag>
+<tag>themes</tag>
+<status status="PASS" start="2025-10-06T14:23:07.276427" elapsed="9.675568"/>
+</test>
+<test id="s1-t5" name="TC_PAGE_AUTO_001_View_Pages_List" line="51">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:16.951995" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:23:16.951995" elapsed="2.740072"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:19.693069" elapsed="0.013704"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:21.706805" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:19.706773" elapsed="2.000032"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:16.951995" elapsed="4.754810"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:21.744720" level="INFO">Current page contains text 'Terms and Conditions'.</msg>
+<arg>Terms and Conditions</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:23:21.707837" elapsed="0.036883"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:21.799220" level="INFO">Current page contains text 'Policy'.</msg>
+<arg>Policy</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:23:21.744720" elapsed="0.054500"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:21.814860" level="INFO">Current page contains text 'About Us'.</msg>
+<arg>About Us</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:23:21.799220" elapsed="0.015640"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:21.830615" level="INFO">Current page contains element 'xpath://a[contains(@href, 'pages/create')]'.</msg>
+<arg>xpath://a[contains(@href, 'pages/create')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:21.814860" elapsed="0.015755"/>
+</kw>
+<doc>TC_PAGE_001: Verify static pages list is accessible</doc>
+<tag>pages</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-06T14:23:16.951995" elapsed="4.878620"/>
+</test>
+<test id="s1-t6" name="TC_PAGE_AUTO_002_Create_New_Page" line="60">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:21.837956" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:23:21.837956" elapsed="1.853054"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:23.691010" elapsed="0.017373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:25.709173" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:23.708383" elapsed="2.000790"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:21.837956" elapsed="3.871217"/>
+</kw>
+<kw name="Click New Static Page" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, 'pages/create')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:25.711222" elapsed="0.047225"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:25.758447" level="INFO">Clicking element 'xpath://a[contains(@href, 'pages/create')]'.</msg>
+<arg>xpath://a[contains(@href, 'pages/create')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:25.758447" elapsed="2.988947"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:31.750829" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:28.748390" elapsed="3.002439"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:25.709173" elapsed="6.041656"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-06T14:23:31.752846" level="INFO">${RANDOM_NUM} = 1735</msg>
+<var>${RANDOM_NUM}</var>
+<arg>str(random.randint(1000, 9999))</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-06T14:23:31.752846" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:23:31.757117" level="INFO">${RANDOM_NUM} = 1735</msg>
+<arg>${RANDOM_NUM}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-06T14:23:31.752846" elapsed="0.004271"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:23:31.758348" level="INFO">${CREATED_PAGE} = Contact Us Test 1735</msg>
+<var>${CREATED_PAGE}</var>
+<arg>Contact Us Test ${RANDOM_NUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-06T14:23:31.757117" elapsed="0.001231"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:23:31.759174" level="INFO">${CREATED_PAGE} = Contact Us Test 1735</msg>
+<arg>${CREATED_PAGE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-06T14:23:31.758348" elapsed="0.000826"/>
+</kw>
+<kw name="Fill Static Page Form" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Page[title]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:31.759919" elapsed="0.053790"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:31.813709" level="INFO">Typing text 'Contact Us Test 1735' into text field 'name:Page[title]'.</msg>
+<arg>name:Page[title]</arg>
+<arg>${title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:31.813709" elapsed="0.228878"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:32.042587" level="INFO">Typing text 'contact-us-test-1735' into text field 'name:Page[permalink_slug]'.</msg>
+<arg>name:Page[permalink_slug]</arg>
+<arg>${permalink}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:32.042587" elapsed="0.215502"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='#primarytab-1']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:32.258089" elapsed="0.030951"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:32.289040" level="INFO">Clicking element 'xpath://a[@href='#primarytab-1']'.</msg>
+<arg>xpath://a[@href='#primarytab-1']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:32.289040" elapsed="0.178678"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:34.478620" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:32.467718" elapsed="2.010902"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.note-editable</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:34.478620" elapsed="0.049053"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:34.527673" level="INFO">Clicking element 'css:.note-editable'.</msg>
+<arg>css:.note-editable</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:34.527673" elapsed="0.085338"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:35.613814" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:34.613011" elapsed="1.000803"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:35.614322" level="INFO">Executing JavaScript:
+var editor = document.querySelector('.note-editable'); editor.innerHTML = '&lt;p&gt;This is a test page for testing purposes. Email: test@restaurant.com&lt;/p&gt;'; editor.dispatchEvent(new Event('input', { bubbles: true }));
+Without any arguments.</msg>
+<arg>var editor = document.querySelector('.note-editable'); editor.innerHTML = '&lt;p&gt;${content}&lt;/p&gt;'; editor.dispatchEvent(new Event('input', { bubbles: true }));</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-06T14:23:35.614322" elapsed="0.014914"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:36.629577" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:35.629236" elapsed="1.000341"/>
+</kw>
+<arg>${CREATED_PAGE}</arg>
+<arg>contact-us-test-${RANDOM_NUM}</arg>
+<arg>This is a test page for testing purposes. Email: test@restaurant.com</arg>
+<status status="PASS" start="2025-10-06T14:23:31.759174" elapsed="4.870403"/>
+</kw>
+<kw name="Set Page Language" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:36.631336" elapsed="0.031664"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:36.663000" level="INFO">Clicking element 'xpath://a[@href='#primarytab-2']'.</msg>
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:36.663000" elapsed="0.115048"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:38.780460" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:36.779051" elapsed="2.001409"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://select[@name='Page[language_id]']/following-sibling::div[contains(@class, 'ss-main')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:38.780460" elapsed="0.027790"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:38.808250" level="INFO">Clicking element 'xpath://select[@name='Page[language_id]']/following-sibling::div[contains(@class, 'ss-main')]'.</msg>
+<arg>xpath://select[@name='Page[language_id]']/following-sibling::div[contains(@class, 'ss-main')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:38.808250" elapsed="0.101850"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:39.910688" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:38.910100" elapsed="1.000588"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'ss-option') and text()='${language}']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:39.910688" elapsed="0.040860"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:39.951548" level="INFO">Clicking element 'xpath://div[contains(@class, 'ss-option') and text()='English']'.</msg>
+<arg>xpath://div[contains(@class, 'ss-option') and text()='${language}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:39.951548" elapsed="0.114770"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:41.067037" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:40.066318" elapsed="1.000719"/>
+</kw>
+<arg>English</arg>
+<status status="PASS" start="2025-10-06T14:23:36.631336" elapsed="4.435701"/>
+</kw>
+<kw name="Set Page Status" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:41.067037" elapsed="0.037739"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:41.104776" level="INFO">Clicking element 'xpath://a[@href='#primarytab-2']'.</msg>
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:41.104776" elapsed="0.098482"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:43.204863" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:41.204275" elapsed="2.000588"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:43.244986" level="INFO">Element 'xpath://input[@id='form-field-page-status' and @checked='checked']' is displayed.</msg>
+<arg>xpath://input[@id='form-field-page-status' and @checked='checked']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.204863" elapsed="0.040123"/>
+</kw>
+<msg time="2025-10-06T14:23:43.244986" level="INFO">${is_checked} = True</msg>
+<var>${is_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[@id='form-field-page-status' and @checked='checked']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.204863" elapsed="0.040123"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'Enabled' and not ${is_checked}</arg>
+<arg>Click Element</arg>
+<arg>id:form-field-page-status</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.244986" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'Disabled' and ${is_checked}</arg>
+<arg>Click Element</arg>
+<arg>id:form-field-page-status</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.244986" elapsed="0.000000"/>
+</kw>
+<arg>Enabled</arg>
+<status status="PASS" start="2025-10-06T14:23:41.067037" elapsed="2.177949"/>
+</kw>
+<kw name="Save Static Page" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.244986" elapsed="0.323310"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.568296" elapsed="0.031681"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:43.600611" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.599977" elapsed="0.134730"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:47.736082" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:43.735507" elapsed="4.000575"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:43.244986" elapsed="4.491096"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:47.736082" elapsed="0.026510"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:47.736082" elapsed="0.026510"/>
+</kw>
+<kw name="Verify Page In List" owner="design_keywords">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:47.762592" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:23:47.762592" elapsed="2.047852"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:49.810444" elapsed="0.032811"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:51.844714" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:49.844329" elapsed="2.000385"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:47.762592" elapsed="4.082122"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:53.845443" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:51.844714" elapsed="2.000729"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:53.845443" elapsed="0.049630"/>
+</kw>
+<arg>${CREATED_PAGE}</arg>
+<status status="PASS" start="2025-10-06T14:23:47.762592" elapsed="6.132481"/>
+</kw>
+<doc>TC_PAGE_002: Create new static page</doc>
+<tag>critical</tag>
+<tag>functional</tag>
+<tag>pages</tag>
+<status status="PASS" start="2025-10-06T14:23:21.830615" elapsed="32.064458"/>
+</test>
+<test id="s1-t7" name="TC_PAGE_AUTO_003_Edit_Existing_Page" line="76">
+<kw name="Edit Page By Title" owner="design_keywords">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:53.895073" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:23:53.895073" elapsed="1.959238"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:23:55.854311" elapsed="0.031752"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:57.887868" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:55.887113" elapsed="2.000755"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:23:53.895073" elapsed="3.992795"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:23:59.889243" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:23:57.887868" elapsed="2.001375"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${page_title}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:23:59.889243" elapsed="0.039428"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:23:59.929785" level="INFO">Clicking element 'xpath://tr[contains(., 'About Us')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${page_title}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:23:59.929785" elapsed="3.563507"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:06.494844" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:03.494320" elapsed="3.000524"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:06.494844" elapsed="0.045078"/>
+</kw>
+<arg>About Us</arg>
+<status status="PASS" start="2025-10-06T14:23:53.895073" elapsed="12.644849"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>name:Page[title]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:06.539922" elapsed="0.128581"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:06.670503" level="INFO">Typing text 'About Us - Updated Test' into text field 'name:Page[title]'.</msg>
+<arg>name:Page[title]</arg>
+<arg>About Us - Updated Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:06.670503" elapsed="0.207917"/>
+</kw>
+<kw name="Save Static Page" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:24:06.879421" elapsed="0.307519"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:07.186940" elapsed="0.030679"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:07.218614" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:07.218614" elapsed="0.264558"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:11.484666" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:07.483172" elapsed="4.001494"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:06.878420" elapsed="4.606246"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:11.487683" elapsed="0.038579"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:11.487683" elapsed="0.038579"/>
+</kw>
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:11.526262" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:24:11.526262" elapsed="2.927371"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:14.454660" elapsed="0.032176"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:16.488428" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:14.486836" elapsed="2.001592"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:11.526262" elapsed="4.962166"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:16.522709" level="INFO">Current page contains text 'About Us - Updated Test'.</msg>
+<arg>About Us - Updated Test</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:24:16.488428" elapsed="0.034281"/>
+</kw>
+<doc>TC_PAGE_003: Edit existing page</doc>
+<tag>functional</tag>
+<tag>pages</tag>
+<status status="PASS" start="2025-10-06T14:23:53.895073" elapsed="22.627636"/>
+</test>
+<test id="s1-t8" name="TC_PAGE_AUTO_004_Change_Page_Status" line="87">
+<kw name="Edit Page By Title" owner="design_keywords">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:16.546680" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:24:16.545681" elapsed="1.634458"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:18.180139" elapsed="0.012311"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:20.193956" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:18.193452" elapsed="2.000504"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:16.527551" elapsed="3.666405"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:22.194207" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:20.193956" elapsed="2.000251"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${page_title}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:22.195239" elapsed="0.066634"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:22.261873" level="INFO">Clicking element 'xpath://tr[contains(., 'Policy')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${page_title}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:22.261873" elapsed="2.404625"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:27.667314" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:24.666498" elapsed="3.000816"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:27.667314" elapsed="0.037961"/>
+</kw>
+<arg>Policy</arg>
+<status status="PASS" start="2025-10-06T14:24:16.527551" elapsed="11.177724"/>
+</kw>
+<kw name="Set Page Status" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:27.707410" elapsed="0.031743"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:27.740115" level="INFO">Clicking element 'xpath://a[@href='#primarytab-2']'.</msg>
+<arg>xpath://a[@href='#primarytab-2']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:27.740115" elapsed="0.132161"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:29.873882" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:27.873275" elapsed="2.000607"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:30.040261" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-197.png"&gt;&lt;img src="selenium-screenshot-197.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T14:24:30.040261" level="FAIL">Element with locator 'xpath://input[@id='form-field-page-status' and @checked='checked']' not found.</msg>
+<arg>xpath://input[@id='form-field-page-status' and @checked='checked']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-06T14:24:29.873882" elapsed="0.213662">Element with locator 'xpath://input[@id='form-field-page-status' and @checked='checked']' not found.</status>
+</kw>
+<msg time="2025-10-06T14:24:30.087544" level="INFO">${is_checked} = False</msg>
+<var>${is_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[@id='form-field-page-status' and @checked='checked']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:24:29.873882" elapsed="0.213662"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'Enabled' and not ${is_checked}</arg>
+<arg>Click Element</arg>
+<arg>id:form-field-page-status</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:24:30.087544" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'Disabled' and ${is_checked}</arg>
+<arg>Click Element</arg>
+<arg>id:form-field-page-status</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:24:30.087544" elapsed="0.000000"/>
+</kw>
+<arg>Disabled</arg>
+<status status="PASS" start="2025-10-06T14:24:27.707410" elapsed="2.380134"/>
+</kw>
+<kw name="Save Static Page" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:24:30.087544" elapsed="0.312630"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:30.400839" elapsed="0.100712"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:30.501551" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:30.501551" elapsed="0.265267"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:34.770242" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:30.766818" elapsed="4.003424"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:30.087544" elapsed="4.682698"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:34.773255" elapsed="0.115157"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:34.773255" elapsed="0.115157"/>
+</kw>
+<doc>TC_PAGE_004: Disable a page</doc>
+<tag>functional</tag>
+<tag>pages</tag>
+<status status="PASS" start="2025-10-06T14:24:16.524721" elapsed="18.363691"/>
+</test>
+<test id="s1-t9" name="TC_PAGE_AUTO_005_Delete_Created_Test_Page" line="95">
+<kw name="Delete Page By Title" owner="design_keywords">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:34.900453" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:24:34.900453" elapsed="3.290895"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:38.191348" elapsed="0.019384"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:40.211430" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:38.210732" elapsed="2.001208"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:34.899451" elapsed="5.312489"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:42.213688" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:40.211940" elapsed="2.001748"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${page_title}')]//input[@type='checkbox']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:42.213688" elapsed="0.050121"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:42.263809" level="INFO">Clicking element 'xpath://tr[contains(., 'Contact Us Test 1735')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${page_title}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:42.263809" elapsed="0.178712"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:43.445340" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:42.442521" elapsed="1.002819"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:43.445340" elapsed="0.036873"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:43.482213" level="INFO">Clicking element 'xpath://button[contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:43.482213" elapsed="0.119039"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:44.602004" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:43.601252" elapsed="1.000752"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:44.603025" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-06T14:24:44.602004" elapsed="0.040488"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:47.643889" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:44.643502" elapsed="3.000387"/>
+</kw>
+<arg>${CREATED_PAGE}</arg>
+<status status="PASS" start="2025-10-06T14:24:34.899451" elapsed="12.744438"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:47.646908" elapsed="0.835556"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:47.646908" elapsed="0.836225"/>
+</kw>
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:48.484032" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:24:48.484032" elapsed="2.385802"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:50.869834" elapsed="0.032925"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:52.903686" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:50.903269" elapsed="2.000417"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:48.484032" elapsed="4.419654"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:54.904311" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:52.903686" elapsed="2.000625"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:55.107781" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-198.png"&gt;&lt;img src="selenium-screenshot-198.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T14:24:55.107781" level="FAIL">Page should have contained text 'Contact Us Test 1735' but did not.</msg>
+<arg>${CREATED_PAGE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-10-06T14:24:54.904311" elapsed="0.203470">Page should have contained text 'Contact Us Test 1735' but did not.</status>
+</kw>
+<msg time="2025-10-06T14:24:55.107781" level="INFO">${page_exists} = False</msg>
+<var>${page_exists}</var>
+<arg>Page Should Contain</arg>
+<arg>${CREATED_PAGE}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:24:54.904311" elapsed="0.203470"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${page_exists}</arg>
+<arg>${False}</arg>
+<arg>msg=Page should be deleted</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-06T14:24:55.107781" elapsed="0.000000"/>
+</kw>
+<doc>TC_PAGE_005: Delete the test page created in TC_PAGE_002</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>pages</tag>
+<status status="PASS" start="2025-10-06T14:24:34.888412" elapsed="20.219369"/>
+</test>
+<test id="s1-t10" name="TC_PAGE_AUTO_006_View_Static_Menus" line="105">
+<kw name="Click Static Menus" owner="design_keywords">
+<kw name="Navigate To Static Pages" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:55.107781" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/pages/pages'</msg>
+<arg>${PAGES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:24:55.107781" elapsed="1.939326"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Static Pages</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:24:57.047107" elapsed="0.017740"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:24:59.065500" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:24:57.064847" elapsed="2.000653"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:55.107781" elapsed="3.957719"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(text(), 'Static Menus')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:24:59.065500" elapsed="0.025988"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:24:59.091488" level="INFO">Clicking element 'xpath://a[contains(text(), 'Static Menus')]'.</msg>
+<arg>xpath://a[contains(text(), 'Static Menus')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:24:59.091488" elapsed="2.134986"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:04.227165" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:01.226474" elapsed="3.000691"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:24:55.107781" elapsed="9.119384"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:04.260297" level="INFO">Current page contains text 'Menus'.</msg>
+<arg>Menus</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:25:04.228172" elapsed="0.032125"/>
+</kw>
+<doc>TC_PAGE_006: Navigate to static menus</doc>
+<tag>functional</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-10-06T14:24:55.107781" elapsed="9.152516"/>
+</test>
+<test id="s1-t11" name="TC_MAIL_AUTO_001_View_Templates_List" line="114">
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:04.260297" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:25:04.260297" elapsed="1.993015"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:06.253312" elapsed="0.037677"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:08.292841" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:06.292004" elapsed="2.000837"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:04.260297" elapsed="4.032544"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:08.310165" level="INFO">Current page contains element 'xpath://a[contains(@href, 'mail_templates/create')]'.</msg>
+<arg>xpath://a[contains(@href, 'mail_templates/create')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:08.294434" elapsed="0.015731"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:08.341844" level="INFO">Current page contains text 'Order email to customer'.</msg>
+<arg>Order email to customer</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:25:08.310165" elapsed="0.031679"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:08.357573" level="INFO">${template_count} = 18</msg>
+<var>${template_count}</var>
+<arg>xpath://table//tbody//tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:08.341844" elapsed="0.015729"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${template_count} &gt;= 10</arg>
+<arg>msg=Should have multiple templates</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-06T14:25:08.357573" elapsed="0.015798"/>
+</kw>
+<doc>TC_MAIL_001: Verify mail templates list is accessible</doc>
+<tag>mail</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-06T14:25:04.260297" elapsed="4.113074"/>
+</test>
+<test id="s1-t12" name="TC_MAIL_AUTO_002_Edit_Template_Subject" line="123">
+<kw name="Edit First Mail Template" owner="design_keywords">
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:08.373371" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:25:08.373371" elapsed="1.912306"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:10.285677" elapsed="0.037704"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:12.324170" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:10.323381" elapsed="2.000789"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:08.373371" elapsed="3.950799"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:14.324918" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:12.324170" elapsed="2.000748"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@class, 'btn-edit')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:14.324918" elapsed="0.031716"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:14.356634" level="INFO">Clicking element 'xpath://a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:14.356634" elapsed="2.709342"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:21.066325" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:17.065976" elapsed="4.000349"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Mail_template[subject]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:21.066325" elapsed="0.043477"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:08.373371" elapsed="12.736431"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:22.110018" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:21.109802" elapsed="1.000216"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:22.142610" level="INFO">${current_subject} = Low stock alert for {{ $stock_name }} - TEST UPDATE</msg>
+<var>${current_subject}</var>
+<arg>name:Mail_template[subject]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:22.110787" elapsed="0.031823"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:25:22.142610" level="INFO">${new_subject} = Low stock alert for {{ $stock_name }} - TEST UPDATE - TEST UPDATE</msg>
+<var>${new_subject}</var>
+<arg>${current_subject} - TEST UPDATE</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-06T14:25:22.142610" elapsed="0.000000"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>name:Mail_template[subject]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:22.142610" elapsed="0.055327"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:22.698730" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:22.197937" elapsed="0.500793"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:22.698730" level="INFO">Typing text 'Low stock alert for {{ $stock_name }} - TEST UPDATE - TEST UPDATE' into text field 'name:Mail_template[subject]'.</msg>
+<arg>name:Mail_template[subject]</arg>
+<arg>${new_subject}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:22.698730" elapsed="0.333259"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:23.533472" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:23.033036" elapsed="0.500436"/>
+</kw>
+<kw name="Save Mail Template" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:25:23.535500" elapsed="0.315976"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:23.851476" elapsed="0.030907"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:23.882383" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:23.882383" elapsed="0.144477"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:28.028535" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:24.026860" elapsed="4.001675"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:23.535500" elapsed="4.493035"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:28.028535" elapsed="0.046101"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:28.028535" elapsed="0.046101"/>
+</kw>
+<doc>TC_MAIL_002: Edit mail template subject</doc>
+<tag>functional</tag>
+<tag>mail</tag>
+<status status="PASS" start="2025-10-06T14:25:08.373371" elapsed="19.701265"/>
+</test>
+<test id="s1-t13" name="TC_MAIL_AUTO_003_Edit_Template_Body_With_Variables" line="137">
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:28.090653" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:25:28.090653" elapsed="1.986051"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:30.076704" elapsed="0.041590"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:32.118875" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:30.118294" elapsed="2.000581"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:28.090653" elapsed="4.028222"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:34.119715" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:32.118875" elapsed="2.000840"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath:(//tr//a[contains(@class, 'btn-edit')])[2]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:34.119715" elapsed="0.038440"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:34.158155" level="INFO">Clicking element 'xpath:(//tr//a[contains(@class, 'btn-edit')])[2]'.</msg>
+<arg>xpath:(//tr//a[contains(@class, 'btn-edit')])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:34.158155" elapsed="2.068010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:39.226963" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:36.226165" elapsed="3.000798"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.CodeMirror</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:39.226963" elapsed="0.040266"/>
+</kw>
+<msg time="2025-10-06T14:25:39.267229" level="INFO">${codemirror_exists} = True</msg>
+<var>${codemirror_exists}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:.CodeMirror</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:25:39.226963" elapsed="0.040266"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:39.267229" level="INFO">Executing JavaScript:
+var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue(editor.getValue() + ' Welcome {{customer_name}}! Thank you for registering.');
+Without any arguments.</msg>
+<arg>var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue(editor.getValue() + ' Welcome {{customer_name}}! Thank you for registering.');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-06T14:25:39.267229" elapsed="0.023865"/>
+</kw>
+<arg>${codemirror_exists}</arg>
+<arg>Execute JavaScript</arg>
+<arg>var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue(editor.getValue() + ' Welcome {{customer_name}}! Thank you for registering.');</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:25:39.267229" elapsed="0.023865"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-06T14:25:39.291094" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${codemirror_exists}</arg>
+<arg>Execute JavaScript</arg>
+<arg>var editor = document.querySelector('[name="Mail_template[body]"]'); if(editor) { editor.value = editor.value + ' Welcome {{customer_name}}! Thank you for registering.'; }</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-06T14:25:39.291094" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:40.291365" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:39.291094" elapsed="1.000271"/>
+</kw>
+<kw name="Save Mail Template" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:25:40.291365" elapsed="0.303504"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:40.594869" elapsed="0.034934"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:40.629803" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:40.629803" elapsed="0.126730"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:44.757067" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:40.756533" elapsed="4.000534"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:40.291365" elapsed="4.465702"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:44.757067" elapsed="0.020944"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:44.757067" elapsed="0.020944"/>
+</kw>
+<doc>TC_MAIL_003: Add variables to template body</doc>
+<tag>functional</tag>
+<tag>mail</tag>
+<status status="PASS" start="2025-10-06T14:25:28.074636" elapsed="16.703375"/>
+</test>
+<test id="s1-t14" name="TC_MAIL_AUTO_004_Create_Custom_Template" line="154">
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:44.778011" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:25:44.778011" elapsed="2.019704"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:46.797715" elapsed="0.027827"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:48.827609" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:46.825542" elapsed="2.002067"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:44.778011" elapsed="4.049598"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:50.828051" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:48.827609" elapsed="2.000442"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:51.033832" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-199.png"&gt;&lt;img src="selenium-screenshot-199.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T14:25:51.033832" level="FAIL">Page should have contained text 'custom_test' but did not.</msg>
+<arg>custom_test</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-10-06T14:25:50.828051" elapsed="0.206782">Page should have contained text 'custom_test' but did not.</status>
+</kw>
+<msg time="2025-10-06T14:25:51.034833" level="INFO">${template_exists} = False</msg>
+<var>${template_exists}</var>
+<arg>Page Should Contain</arg>
+<arg>custom_test</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:25:50.828051" elapsed="0.206782"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${template_exists}</arg>
+<arg>Run Keywords</arg>
+<arg>Log</arg>
+<arg>Template custom_test already exists, deleting it first</arg>
+<arg>AND</arg>
+<arg>Delete Template By Code</arg>
+<arg>custom_test</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:25:51.034833" elapsed="0.000000"/>
+</kw>
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:51.035834" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:25:51.035834" elapsed="2.349817"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:25:53.385651" elapsed="0.016997"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:25:55.404255" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:53.402648" elapsed="2.001607"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:51.035834" elapsed="4.368421"/>
+</kw>
+<kw name="Click New Mail Template" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@class, 'btn-primary') and contains(@href, 'create')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:25:55.405306" elapsed="0.033257"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:25:55.438563" level="INFO">Clicking element 'xpath://a[contains(@class, 'btn-primary') and contains(@href, 'create')]'.</msg>
+<arg>xpath://a[contains(@class, 'btn-primary') and contains(@href, 'create')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:25:55.438563" elapsed="2.181498"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:00.620694" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:25:57.620061" elapsed="3.000633"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:25:55.405306" elapsed="5.215388"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-06T14:26:00.620694" level="INFO">${RANDOM_NUM} = 8718</msg>
+<var>${RANDOM_NUM}</var>
+<arg>str(random.randint(1000, 9999))</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-06T14:26:00.620694" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:26:00.624211" level="INFO">${CREATED_TEMPLATE} = admin::_mail.custom_test</msg>
+<var>${CREATED_TEMPLATE}</var>
+<arg>admin::_mail.custom_test</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-06T14:26:00.624211" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:26:00.626228" level="INFO">${CREATED_TEMPLATE} = admin::_mail.custom_test</msg>
+<arg>${CREATED_TEMPLATE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-06T14:26:00.625232" elapsed="0.000996"/>
+</kw>
+<kw name="Fill Mail Template Form" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Mail_template[code]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:00.628231" elapsed="0.051974"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:00.680205" level="INFO">Typing text 'admin::_mail.custom_test' into text field 'name:Mail_template[code]'.</msg>
+<arg>name:Mail_template[code]</arg>
+<arg>${code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:00.680205" elapsed="0.229521"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:01.410994" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:00.910725" elapsed="0.500269"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Mail_template[label]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:01.410994" elapsed="0.040924"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:01.452912" level="INFO">Typing text 'Test Custom Email 8718' into text field 'name:Mail_template[label]'.</msg>
+<arg>name:Mail_template[label]</arg>
+<arg>${title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:01.451918" elapsed="0.229791"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:02.181894" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:01.681709" elapsed="0.500185"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Mail_template[subject]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:02.181894" elapsed="0.033289"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:02.216178" level="INFO">Typing text 'Test Email Subject' into text field 'name:Mail_template[subject]'.</msg>
+<arg>name:Mail_template[subject]</arg>
+<arg>${subject}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:02.215183" elapsed="0.190535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:02.907523" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:02.406715" elapsed="0.500808"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.CodeMirror</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:02.907978" elapsed="0.039182"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:03.949095" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:02.948258" elapsed="1.000837"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:03.949095" level="INFO">Executing JavaScript:
+var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue('Hello, this is a test email template.');
+Without any arguments.</msg>
+<arg>var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue('${body}');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-06T14:26:03.949095" elapsed="0.026542"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:04.976110" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:03.975637" elapsed="1.000473"/>
+</kw>
+<arg>Test Custom Email ${RANDOM_NUM}</arg>
+<arg>${CREATED_TEMPLATE}</arg>
+<arg>Test Email Subject</arg>
+<arg>Hello, this is a test email template.</arg>
+<status status="PASS" start="2025-10-06T14:26:00.627295" elapsed="4.349848"/>
+</kw>
+<kw name="Select Mail Layout" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://select[@name='Mail_template[layout_id]']/following-sibling::div[contains(@class, 'ss-main')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:04.979139" elapsed="0.056309"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:05.035448" level="INFO">Clicking element 'xpath://select[@name='Mail_template[layout_id]']/following-sibling::div[contains(@class, 'ss-main')]'.</msg>
+<arg>xpath://select[@name='Mail_template[layout_id]']/following-sibling::div[contains(@class, 'ss-main')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:05.035448" elapsed="0.264229"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:06.300491" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:05.299677" elapsed="1.000814"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'ss-option') and text()='${layout}']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:06.301007" elapsed="0.041915"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:06.343935" level="INFO">Clicking element 'xpath://div[contains(@class, 'ss-option') and text()='Default layout']'.</msg>
+<arg>xpath://div[contains(@class, 'ss-option') and text()='${layout}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:06.342922" elapsed="0.122915"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:07.466064" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:06.465837" elapsed="1.000227"/>
+</kw>
+<arg>Default layout</arg>
+<status status="PASS" start="2025-10-06T14:26:04.979139" elapsed="2.486925"/>
+</kw>
+<kw name="Save Mail Template" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:26:07.466064" elapsed="3.094401"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:10.560465" elapsed="0.034521"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:10.594986" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:10.594986" elapsed="0.152090"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:14.747556" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:10.747076" elapsed="4.000480"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:07.466064" elapsed="7.281492"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:16.750018" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:14.748578" elapsed="2.001440"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:16.752048" elapsed="0.023554"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:16.751034" elapsed="0.024568"/>
+</kw>
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:16.777600" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:26:16.776616" elapsed="2.112082"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:18.888698" elapsed="0.021911"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:20.911183" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:18.910609" elapsed="2.000574"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:16.776616" elapsed="4.134567"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:22.913574" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:20.913214" elapsed="2.000360"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:22.942058" level="INFO">Current page contains text 'custom_test'.</msg>
+<arg>custom_test</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:26:22.914600" elapsed="0.027458"/>
+</kw>
+<doc>TC_MAIL_004: Create new custom mail template</doc>
+<tag>critical</tag>
+<tag>functional</tag>
+<tag>mail</tag>
+<status status="PASS" start="2025-10-06T14:25:44.778011" elapsed="38.165064"/>
+</test>
+<test id="s1-t15" name="TC_MAIL_AUTO_005_Delete_Custom_Template" line="180">
+<kw name="Delete Template By Code" owner="design_keywords">
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:22.948059" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:26:22.948059" elapsed="2.095354"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:25.043413" elapsed="0.022518"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:27.067435" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:25.066936" elapsed="2.000499"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:22.947062" elapsed="4.120373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:29.068997" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:27.067435" elapsed="2.002099"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${template_code}')]//input[@type='checkbox']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:29.069534" elapsed="0.045579"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:29.116106" level="INFO">Clicking element 'xpath://tr[contains(., 'custom_test')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${template_code}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:29.115113" elapsed="0.154664"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:30.270125" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:29.269777" elapsed="1.000348"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(@class, 'text-danger') and contains(., 'Delete')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:30.271687" elapsed="0.041394"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:30.314188" level="INFO">Clicking element 'xpath://button[contains(@class, 'text-danger') and contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(@class, 'text-danger') and contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:30.313081" elapsed="0.131123"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:32.444913" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:30.444204" elapsed="2.000709"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:32.445938" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-06T14:26:32.444913" elapsed="0.009998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:35.455475" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:32.454911" elapsed="3.000564"/>
+</kw>
+<arg>custom_test</arg>
+<status status="PASS" start="2025-10-06T14:26:22.946076" elapsed="12.509399"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:35.457803" elapsed="0.023523"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:35.456742" elapsed="0.024584"/>
+</kw>
+<kw name="Navigate To Mail Templates" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:35.483476" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mail_templates'</msg>
+<arg>${MAIL_TEMPLATES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:26:35.482286" elapsed="2.037383"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mail Templates</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:37.519669" elapsed="0.026898"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:39.547916" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:37.547438" elapsed="2.000987"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:35.482286" elapsed="4.066139"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:41.549955" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:39.548425" elapsed="2.001530"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:41.893744" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-200.png"&gt;&lt;img src="selenium-screenshot-200.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T14:26:41.893744" level="FAIL">Page should have contained text 'custom_test' but did not.</msg>
+<arg>custom_test</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-10-06T14:26:41.550579" elapsed="0.344215">Page should have contained text 'custom_test' but did not.</status>
+</kw>
+<msg time="2025-10-06T14:26:41.894794" level="INFO">${template_exists} = False</msg>
+<var>${template_exists}</var>
+<arg>Page Should Contain</arg>
+<arg>custom_test</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:26:41.550579" elapsed="0.344215"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${template_exists}</arg>
+<arg>${False}</arg>
+<arg>msg=Template should be deleted</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-06T14:26:41.894794" elapsed="0.000000"/>
+</kw>
+<doc>TC_MAIL_005: Delete custom template created in TC_MAIL_004</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>mail</tag>
+<status status="PASS" start="2025-10-06T14:26:22.944071" elapsed="18.950723"/>
+</test>
+<test id="s1-t16" name="TC_SLIDER_AUTO_001_View_Sliders_List" line="193">
+<kw name="Navigate To Sliders" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:41.897248" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/frontend/sliders'</msg>
+<arg>${SLIDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:26:41.897248" elapsed="1.979999"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sliders</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:43.877247" elapsed="0.041137"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:45.918622" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:43.918384" elapsed="2.000238"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:41.897248" elapsed="4.021374"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:45.947213" level="INFO">Current page contains element 'xpath://a[contains(@href, 'sliders/create')]'.</msg>
+<arg>xpath://a[contains(@href, 'sliders/create')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:45.918622" elapsed="0.028591"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:45.974559" level="INFO">Current page contains text 'Homepage'.</msg>
+<arg>Homepage</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:26:45.948163" elapsed="0.026396"/>
+</kw>
+<msg time="2025-10-06T14:26:45.974559" level="INFO">${slider_exists} = True</msg>
+<var>${slider_exists}</var>
+<arg>Page Should Contain</arg>
+<arg>Homepage</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:26:45.947213" elapsed="0.027346"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${slider_exists}</arg>
+<arg>Log</arg>
+<arg>No sliders found</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:26:45.975678" elapsed="0.000000"/>
+</kw>
+<doc>TC_SLIDER_001: Verify sliders list is accessible</doc>
+<tag>sliders</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-06T14:26:41.896250" elapsed="4.079428"/>
+</test>
+<test id="s1-t17" name="TC_SLIDER_AUTO_002_Create_Slider_Without_Image" line="201">
+<kw name="Navigate To Sliders" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:45.979539" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/frontend/sliders'</msg>
+<arg>${SLIDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:26:45.978481" elapsed="2.232368"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sliders</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:26:48.210849" elapsed="0.011535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:50.222663" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:48.222384" elapsed="2.000279"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:45.978481" elapsed="4.244182"/>
+</kw>
+<kw name="Click New Slider" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, 'sliders/create')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:50.223353" elapsed="0.025872"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:50.249225" level="INFO">Clicking element 'xpath://a[contains(@href, 'sliders/create')]'.</msg>
+<arg>xpath://a[contains(@href, 'sliders/create')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:50.249225" elapsed="2.820882"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:56.070568" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:53.070107" elapsed="3.000461"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:50.223353" elapsed="5.848353"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-06T14:26:56.074208" level="INFO">${RANDOM_NUM} = 9317</msg>
+<var>${RANDOM_NUM}</var>
+<arg>str(random.randint(1000, 9999))</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.073183" elapsed="0.001025"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:26:56.075656" level="INFO">${RANDOM_NUM} = 9317</msg>
+<arg>${RANDOM_NUM}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.075656" elapsed="0.001026"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:26:56.077763" level="INFO">${CREATED_SLIDER_NAME} = Test Promotional Slider 9317</msg>
+<var>${CREATED_SLIDER_NAME}</var>
+<arg>Test Promotional Slider ${RANDOM_NUM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.076682" elapsed="0.001081"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-06T14:26:56.078662" level="INFO">${CREATED_SLIDER_NAME} = Test Promotional Slider 9317</msg>
+<arg>${CREATED_SLIDER_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.078662" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Slider Form Without Image" owner="design_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Slider[name]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.080986" elapsed="0.039989"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:56.121985" level="INFO">Typing text 'Test Promotional Slider 9317' into text field 'name:Slider[name]'.</msg>
+<arg>name:Slider[name]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.120975" elapsed="0.188819"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:56.310797" level="INFO">Typing text 'test-promo-slider-9317' into text field 'name:Slider[code]'.</msg>
+<arg>name:Slider[code]</arg>
+<arg>${code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.309794" elapsed="0.203642"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:26:57.514763" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:56.514458" elapsed="1.000305"/>
+</kw>
+<arg>${CREATED_SLIDER_NAME}</arg>
+<arg>test-promo-slider-${RANDOM_NUM}</arg>
+<status status="PASS" start="2025-10-06T14:26:56.079846" elapsed="1.434917"/>
+</kw>
+<kw name="Save Slider" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:26:57.516996" elapsed="0.293247"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:26:57.811263" elapsed="0.033115"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:26:57.845384" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:26:57.844378" elapsed="0.157163"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:02.002084" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:26:58.001541" elapsed="4.000543"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:26:57.515909" elapsed="4.486175"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:04.004015" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:02.003013" elapsed="2.001002"/>
+</kw>
+<doc>TC_SLIDER_002: Create slider without uploading image</doc>
+<tag>functional</tag>
+<tag>sliders</tag>
+<status status="PASS" start="2025-10-06T14:26:45.977430" elapsed="18.029073"/>
+</test>
+<test id="s1-t18" name="TC_SLIDER_AUTO_003_Edit_Existing_Slider" line="214">
+<kw name="Navigate To Sliders" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:04.013555" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/frontend/sliders'</msg>
+<arg>${SLIDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:27:04.012556" elapsed="2.232623"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sliders</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:27:06.245179" elapsed="0.028067"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:08.275057" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:06.273246" elapsed="2.001811"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:04.011555" elapsed="4.263502"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:10.276974" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:08.276133" elapsed="2.000841"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${CREATED_SLIDER_NAME}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:27:10.276974" elapsed="0.059840"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:10.336814" level="INFO">Clicking element 'xpath://tr[contains(., 'Test Promotional Slider 9317')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${CREATED_SLIDER_NAME}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:10.336814" elapsed="2.467320"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:15.804742" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:12.804134" elapsed="3.000608"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:Slider[name]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:27:15.805346" elapsed="0.038083"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>name:Slider[name]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:15.844424" elapsed="0.073542"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:15.918955" level="INFO">Typing text 'Test Promotional Slider 9317 - Updated' into text field 'name:Slider[name]'.</msg>
+<arg>name:Slider[name]</arg>
+<arg>${CREATED_SLIDER_NAME} - Updated</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:15.917966" elapsed="0.186568"/>
+</kw>
+<kw name="Save Slider" owner="design_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T14:27:16.106533" elapsed="0.326905"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:27:16.433438" elapsed="0.036099"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:16.469537" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:16.469537" elapsed="0.179372"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:20.649810" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:16.649264" elapsed="4.000546"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:16.105540" elapsed="4.544270"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:27:20.652826" elapsed="0.030953"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:20.651829" elapsed="0.031950"/>
+</kw>
+<kw name="Navigate To Sliders" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:20.684780" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/frontend/sliders'</msg>
+<arg>${SLIDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:27:20.684780" elapsed="2.335120"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sliders</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:27:23.019900" elapsed="0.021582"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:25.041783" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:23.041482" elapsed="2.000301"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:20.684780" elapsed="4.357003"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:25.076851" level="INFO">Current page contains text 'Test Promotional Slider 9317 - Updated'.</msg>
+<arg>${CREATED_SLIDER_NAME} - Updated</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:27:25.041783" elapsed="0.036159"/>
+</kw>
+<doc>TC_SLIDER_003: Edit the slider created in TC_SLIDER_002</doc>
+<tag>functional</tag>
+<tag>sliders</tag>
+<status status="PASS" start="2025-10-06T14:27:04.008551" elapsed="21.069391"/>
+</test>
+<test id="s1-t19" name="TC_SLIDER_AUTO_004_View_Banners_Section" line="231">
+<kw name="Click Banners Button" owner="design_keywords">
+<kw name="Navigate To Sliders" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:25.081380" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/frontend/sliders'</msg>
+<arg>${SLIDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:27:25.081380" elapsed="2.128007"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sliders</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:27:27.209387" elapsed="0.024151"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:29.234871" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:27.234054" elapsed="2.000817"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:25.080855" elapsed="4.154016"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, 'banners')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:27:29.234871" elapsed="0.046819"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:29.281690" level="INFO">Clicking element 'xpath://a[contains(@href, 'banners')]'.</msg>
+<arg>xpath://a[contains(@href, 'banners')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:29.281690" elapsed="2.410688"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:34.692875" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:31.692378" elapsed="3.000497"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:25.079855" elapsed="9.613020"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:34.723884" level="INFO">Current page contains text 'Banners'.</msg>
+<arg>Banners</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-06T14:27:34.692875" elapsed="0.031009"/>
+</kw>
+<doc>TC_SLIDER_004: Navigate to banners section</doc>
+<tag>banners</tag>
+<tag>functional</tag>
+<status status="PASS" start="2025-10-06T14:27:25.079855" elapsed="9.644887"/>
+</test>
+<test id="s1-t20" name="TC_SLIDER_AUTO_005_Delete_Created_Slider" line="237">
+<kw name="Navigate To Sliders" owner="design_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:34.726868" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/igniter/frontend/sliders'</msg>
+<arg>${SLIDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-06T14:27:34.726868" elapsed="2.295464"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sliders</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:27:37.022332" elapsed="0.019313"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:39.043413" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:37.042738" elapsed="2.000675"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:34.726868" elapsed="4.316545"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:41.044211" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:39.043413" elapsed="2.000798"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${CREATED_SLIDER_NAME}')]//input[@type='checkbox']</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:27:41.044211" elapsed="0.038518"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:41.096019" level="INFO">Clicking element 'xpath://tr[contains(., 'Test Promotional Slider 9317')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${CREATED_SLIDER_NAME}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:41.082729" elapsed="0.170500"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:42.253982" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:41.253229" elapsed="1.000753"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(@class, 'text-danger') and contains(., 'Delete')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T14:27:42.253982" elapsed="0.031567"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:42.285549" level="INFO">Clicking element 'xpath://button[contains(@class, 'text-danger') and contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(@class, 'text-danger') and contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T14:27:42.285549" elapsed="0.161728"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:44.447551" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:42.447277" elapsed="2.000631"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:44.447908" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-06T14:27:44.447908" elapsed="0.015389"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:47.465859" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:44.464418" elapsed="3.001441"/>
+</kw>
+<kw name="Design Verify Success Message" owner="design_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(text(), 'success') or contains(@class, 'success')]</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T14:27:47.465859" elapsed="0.351013"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:47.465859" elapsed="0.351013"/>
+</kw>
+<doc>TC_SLIDER_005: Delete the test slider created in TC_SLIDER_002</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>sliders</tag>
+<status status="PASS" start="2025-10-06T14:27:34.726058" elapsed="13.090814"/>
+</test>
+<kw name="Logout From Admin" owner="customers_keywords" type="TEARDOWN">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-10-06T14:27:53.013448" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-201.png"&gt;&lt;img src="selenium-screenshot-201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-06T14:27:53.013448" level="FAIL">Element 'xpath://a[contains(@href, 'logout')]' not visible after 5 seconds.</msg>
+<arg>xpath://a[contains(@href, 'logout')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-06T14:27:47.816872" elapsed="5.196576">Element 'xpath://a[contains(@href, 'logout')]' not visible after 5 seconds.</status>
+</kw>
+<msg time="2025-10-06T14:27:53.013448" level="INFO">${logout_exists} = False</msg>
+<var>${logout_exists}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://a[contains(@href, 'logout')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-06T14:27:47.816872" elapsed="5.196576"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${logout_exists}</arg>
+<arg>Click Element</arg>
+<arg>xpath://a[contains(@href, 'logout')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-06T14:27:53.017057" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T14:27:55.017784" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T14:27:53.017057" elapsed="2.000727"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-06T14:27:55.017784" elapsed="2.493424"/>
+</kw>
+<status status="PASS" start="2025-10-06T14:27:47.816872" elapsed="9.694336"/>
+</kw>
+<doc>Automated Functional Tests for Design Module (19 Test Cases)</doc>
+<status status="PASS" start="2025-10-06T14:22:22.958096" elapsed="334.553112"/>
+</suite>
+<statistics>
+<total>
+<stat pass="20" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">banners</stat>
+<stat pass="3" fail="0" skip="0">cleanup</stat>
+<stat pass="2" fail="0" skip="0">critical</stat>
+<stat pass="16" fail="0" skip="0">functional</stat>
+<stat pass="5" fail="0" skip="0">mail</stat>
+<stat pass="1" fail="0" skip="0">menus</stat>
+<stat pass="5" fail="0" skip="0">pages</stat>
+<stat pass="4" fail="0" skip="0">sliders</stat>
+<stat pass="4" fail="0" skip="0">smoke</stat>
+<stat pass="4" fail="0" skip="0">themes</stat>
+</tag>
+<suite>
+<stat name="Design Tests" id="s1" pass="20" fail="0" skip="0">Design Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-06T14:22:23.688669" level="WARN">The chromedriver version (140.0.7339.208) detected in PATH at C:\Users\Anand\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (141.0.7390.54); currently, chromedriver 141.0.7390.54 is recommended for chrome 141.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-10-06T14:25:39.291094" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+</errors>
+</robot>

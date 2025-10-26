@@ -1,0 +1,3189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.2 on win32)" generated="2025-10-12T16:35:08.249570" rpa="false" schemaversion="5">
+<suite id="s1" name="Restaurant Tests" source="C:\django website\robot_tests\tests\restaurant_tests.robot">
+<kw name="Open Admin And Login" owner="restaurant_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:08.899436" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/admin/login'.</msg>
+<msg time="2025-10-12T16:35:09.098290" level="WARN">The chromedriver version (140.0.7339.208) detected in PATH at C:\Users\Anand\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (141.0.7390.54); currently, chromedriver 141.0.7390.76 is recommended for chrome 141.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${ADMIN_URL}/login</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:35:08.899436" elapsed="2.895363"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-12T16:35:11.796811" elapsed="3.398093"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[@name='username' or contains(@id, 'username')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:35:15.195412" elapsed="0.061406"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:15.259601" level="INFO">Typing text 'anand' into text field 'xpath://input[@name='username' or contains(@id, 'username')]'.</msg>
+<arg>xpath://input[@name='username' or contains(@id, 'username')]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:15.256818" elapsed="0.215132"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:15.475722" level="INFO">Typing password into text field 'xpath://input[@name='password' or contains(@id, 'password')]'.</msg>
+<msg time="2025-10-12T16:35:15.539736" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath://input[@name='password' or contains(@id, 'password')]</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:15.474180" elapsed="0.151347"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:15.625527" level="INFO">Clicking button 'xpath://button[@type='submit' or contains(., 'Sign in')]'.</msg>
+<arg>xpath://button[@type='submit' or contains(., 'Sign in')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:15.625527" elapsed="0.171782"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:18.801303" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:15.797309" elapsed="3.003994"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, 'locations') or contains(@href, 'dashboard')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:35:18.801303" elapsed="1.358293"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:35:08.899436" elapsed="11.260160"/>
+</kw>
+<test id="s1-t1" name="TC_LOC_001_View_Locations_List" line="20">
+<kw name="Go To Locations" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:20.159596" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/locations'</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:35:20.159596" elapsed="0.873955"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Locations</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:35:21.037699" elapsed="2.465239"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:25.503178" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:23.502938" elapsed="2.000240"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:35:20.159596" elapsed="5.343582"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:25.542258" level="INFO">Current page contains text 'Default'.</msg>
+<arg>Default</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:35:25.505185" elapsed="0.037073"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:25.588532" level="INFO">Current page contains text 'Coventry'.</msg>
+<arg>Coventry</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:35:25.544267" elapsed="0.044265"/>
+</kw>
+<doc>TC_LOC_001: View locations list</doc>
+<tag>locations</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-12T16:35:20.159596" elapsed="5.431342"/>
+</test>
+<test id="s1-t2" name="TC_LOC_002_Create_New_Location" line="27">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-12T16:35:25.594918" level="INFO">${RANDOM} = 1413</msg>
+<var>${RANDOM}</var>
+<arg>4</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-12T16:35:25.594918" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:35:25.596926" level="INFO">${CREATED_LOCATION} = Adelaide Test Branch 1413</msg>
+<var>${CREATED_LOCATION}</var>
+<arg>Adelaide Test Branch ${RANDOM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-12T16:35:25.594918" elapsed="0.002008"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:35:25.596926" level="INFO">${CREATED_LOCATION} = Adelaide Test Branch 1413</msg>
+<arg>${CREATED_LOCATION}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-12T16:35:25.596926" elapsed="0.000000"/>
+</kw>
+<kw name="Create Location" owner="restaurant_keywords">
+<kw name="Go To Locations" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:25.602051" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/locations'</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:35:25.599330" elapsed="2.493310"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Locations</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:35:28.092640" elapsed="0.047883"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:30.141091" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:28.140523" elapsed="2.000568"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:35:25.599330" elapsed="4.542286"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:35:30.141616" elapsed="0.046234"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:30.187850" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:30.187850" elapsed="3.767745"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:36.957205" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:33.955595" elapsed="3.001610"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'location_name')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:35:36.957205" elapsed="0.069989"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:37.027194" level="INFO">Typing text 'Adelaide Test Branch 1413' into text field 'xpath://input[contains(@name, 'location_name')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_name')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:37.027194" elapsed="0.268104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:37.295298" level="INFO">Typing text 'adelaide1413@restaurant.test' into text field 'xpath://input[contains(@name, 'location_email')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_email')]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:37.295298" elapsed="0.226456"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:37.524429" level="INFO">Typing text '0412345678' into text field 'xpath://input[contains(@name, 'location_telephone')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_telephone')]</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:37.521754" elapsed="0.221983"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:37.743737" level="INFO">Typing text '123 Rundle Mall' into text field 'xpath://input[contains(@name, 'address_1') or contains(@name, 'location_address_1')]'.</msg>
+<arg>xpath://input[contains(@name, 'address_1') or contains(@name, 'location_address_1')]</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:37.743737" elapsed="0.197984"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:37.941721" level="INFO">Typing text 'Adelaide' into text field 'xpath://input[contains(@name, 'location_city')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_city')]</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:37.941721" elapsed="0.151586"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:38.093307" level="INFO">Typing text 'SA' into text field 'xpath://input[contains(@name, 'location_state')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_state')]</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:38.093307" elapsed="0.214460"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:38.309580" level="INFO">Typing text '5000' into text field 'xpath://input[contains(@name, 'location_postcode')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_postcode')]</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:38.307767" elapsed="0.155030"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'ss-values')]//div[contains(@class, 'ss-single')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:35:38.462797" elapsed="0.063839"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:38.526636" level="INFO">Clicking element 'xpath://div[contains(@class, 'ss-values')]//div[contains(@class, 'ss-single')]'.</msg>
+<arg>xpath://div[contains(@class, 'ss-values')]//div[contains(@class, 'ss-single')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:38.526636" elapsed="0.130306"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:39.663652" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:38.663059" elapsed="1.000593"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[@type='search' and @placeholder='Search']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:35:39.663652" elapsed="0.073089"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:39.736741" level="INFO">Typing text 'Australia' into text field 'xpath://input[@type='search' and @placeholder='Search']'.</msg>
+<arg>xpath://input[@type='search' and @placeholder='Search']</arg>
+<arg>${country}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:39.736741" elapsed="0.124390"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:40.865772" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:39.861131" elapsed="1.004641"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'ss-option') and contains(., '${country}')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:35:40.865772" elapsed="0.057258"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:40.923030" level="INFO">Clicking element 'xpath://div[contains(@class, 'ss-option') and contains(., 'Australia')]'.</msg>
+<arg>xpath://div[contains(@class, 'ss-option') and contains(., '${country}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:40.923030" elapsed="0.112865"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:42.036796" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:41.035895" elapsed="1.000901"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:35:42.036796" elapsed="0.315024"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:42.353926" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:35:42.353926" elapsed="0.163988"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:46.519483" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:42.517914" elapsed="4.001569"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:35:46.519483" elapsed="2.515772"/>
+</kw>
+<msg time="2025-10-12T16:35:49.035255" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:35:46.519483" elapsed="2.515772"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:35:49.035255" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:35:49.035255" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:35:46.519483" elapsed="2.515772"/>
+</kw>
+<arg>${CREATED_LOCATION}</arg>
+<arg>adelaide${RANDOM}@restaurant.test</arg>
+<arg>0412345678</arg>
+<arg>123 Rundle Mall</arg>
+<arg>Adelaide</arg>
+<arg>SA</arg>
+<arg>Australia</arg>
+<arg>5000</arg>
+<status status="PASS" start="2025-10-12T16:35:25.599330" elapsed="23.435925"/>
+</kw>
+<kw name="Go To Locations" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:49.035255" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/locations'</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:35:49.035255" elapsed="3.151124"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Locations</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:35:52.186379" elapsed="0.014257"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:54.201267" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:52.200636" elapsed="2.000631"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:35:49.035255" elapsed="5.166012"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:54.228217" level="INFO">Current page contains text 'Adelaide Test Branch 1413'.</msg>
+<arg>${CREATED_LOCATION}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:35:54.201267" elapsed="0.026950"/>
+</kw>
+<doc>TC_LOC_002: Create new location</doc>
+<tag>critical</tag>
+<tag>functional</tag>
+<tag>locations</tag>
+<status status="PASS" start="2025-10-12T16:35:25.592909" elapsed="28.635308"/>
+</test>
+<test id="s1-t3" name="TC_LOC_003_Edit_Default_Telephone" line="37">
+<kw name="Edit Location Telephone" owner="restaurant_keywords">
+<kw name="Go To Locations" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:35:54.236272" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/locations'</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:35:54.234259" elapsed="3.148885"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Locations</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:35:57.383764" elapsed="0.020682"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:35:59.405301" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:57.404446" elapsed="2.000855"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:35:54.234259" elapsed="5.171042"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:01.405862" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:35:59.405301" elapsed="2.000561"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:01.405862" elapsed="0.050410"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:01.456272" level="INFO">Clicking element 'xpath://tr[contains(., 'Default')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:01.456272" elapsed="2.957835"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:07.422882" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:04.414107" elapsed="3.008775"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'location_telephone')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:07.422882" elapsed="0.019873"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'location_telephone')]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:07.447450" elapsed="0.068561"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:07.516669" level="INFO">Typing text '0800000000' into text field 'xpath://input[contains(@name, 'location_telephone')]'.</msg>
+<arg>xpath://input[contains(@name, 'location_telephone')]</arg>
+<arg>${new_phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:07.516011" elapsed="0.170912"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:36:07.686923" elapsed="0.319349"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:08.008278" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:08.006272" elapsed="0.176463"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:12.185269" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:08.184599" elapsed="4.000670"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.185269" elapsed="0.024021"/>
+</kw>
+<msg time="2025-10-12T16:36:12.209290" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.185269" elapsed="0.024021"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:36:12.209290" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:36:12.209290" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:12.185269" elapsed="0.024021"/>
+</kw>
+<arg>Default</arg>
+<arg>0800000000</arg>
+<status status="PASS" start="2025-10-12T16:35:54.232242" elapsed="17.977048"/>
+</kw>
+<doc>TC_LOC_003: Edit location telephone</doc>
+<tag>functional</tag>
+<tag>locations</tag>
+<status status="PASS" start="2025-10-12T16:35:54.232242" elapsed="17.977048"/>
+</test>
+<test id="s1-t4" name="TC_LOC_004_Disable_Default_Location" line="42">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-12T16:36:12.216162" level="INFO">Status toggle requires complex interaction - verify manually</msg>
+<arg>Status toggle requires complex interaction - verify manually</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.216162" elapsed="0.001249"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2025-10-12T16:36:12.217906" level="INFO">Execution passed with message:
+Status change requires manual verification</msg>
+<arg>Status change requires manual verification</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.217906" elapsed="0.000000">Status change requires manual verification</status>
+</kw>
+<doc>TC_LOC_004: Disable location (manual step - complex toggle)</doc>
+<tag>functional</tag>
+<tag>locations</tag>
+<tag>manual</tag>
+<status status="PASS" start="2025-10-12T16:36:12.209290" elapsed="0.008616">Status change requires manual verification</status>
+</test>
+<test id="s1-t5" name="TC_LOC_005_Delete_Created_Location" line="48">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Variable Should Exist" owner="BuiltIn">
+<arg>${CREATED_LOCATION}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.221255" elapsed="0.000000"/>
+</kw>
+<msg time="2025-10-12T16:36:12.221255" level="INFO">${location_created} = True</msg>
+<var>${location_created}</var>
+<arg>Variable Should Exist</arg>
+<arg>${CREATED_LOCATION}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.217906" elapsed="0.003349"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Delete Location" owner="restaurant_keywords">
+<kw name="Go To Locations" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:12.225295" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/locations'</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.223276" elapsed="0.849894"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Locations</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:13.073170" elapsed="1.884805"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:16.961051" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:14.959021" elapsed="2.002030"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:12.223276" elapsed="4.737775"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:18.961385" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:16.961051" elapsed="2.000334"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:18.961385" elapsed="0.035377"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:18.996762" level="INFO">Clicking element 'xpath://tr[contains(., 'Adelaide Test Branch 1413')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:18.996762" elapsed="0.143494"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:20.142811" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:19.140256" elapsed="1.002555"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:20.142811" elapsed="0.030737"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:20.173548" level="INFO">Clicking element 'xpath://button[contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:20.173548" elapsed="0.107149"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:21.286411" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:20.282889" elapsed="1.003522"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:21.289403" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-12T16:36:21.287958" elapsed="0.072955"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:24.361048" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:21.360913" elapsed="3.000135"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:24.363071" elapsed="0.201933"/>
+</kw>
+<msg time="2025-10-12T16:36:24.565004" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:36:24.363071" elapsed="0.201933"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:36:24.565004" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:36:24.565004" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:24.361048" elapsed="0.212647"/>
+</kw>
+<arg>${CREATED_LOCATION}</arg>
+<status status="PASS" start="2025-10-12T16:36:12.223276" elapsed="12.350419"/>
+</kw>
+<arg>${location_created}</arg>
+<arg>Delete Location</arg>
+<arg>${CREATED_LOCATION}</arg>
+<arg>ELSE</arg>
+<arg>Pass Execution</arg>
+<arg>Skipped - location was not created in TC_LOC_002</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-12T16:36:12.221255" elapsed="12.352440"/>
+</kw>
+<doc>TC_LOC_005: Delete test location</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>locations</tag>
+<status status="PASS" start="2025-10-12T16:36:12.217906" elapsed="12.357292"/>
+</test>
+<test id="s1-t6" name="TC_MENU_001_View_Menu_Items_List" line="59">
+<kw name="Go To Menu Items" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:24.662374" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/menus'</msg>
+<arg>${MENUS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:36:24.662374" elapsed="1.188652"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Menus</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:25.852373" elapsed="1.625006"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:29.479655" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:27.478372" elapsed="2.001283"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:24.662374" elapsed="4.817281"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:29.526358" level="INFO">Current page contains text 'Boiled Plantain'.</msg>
+<arg>Boiled Plantain</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:36:29.481226" elapsed="0.052835"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:29.565853" level="INFO">Current page contains text 'YAM PORRIDGE'.</msg>
+<arg>YAM PORRIDGE</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:36:29.534061" elapsed="0.031792"/>
+</kw>
+<doc>TC_MENU_001: View menu items list</doc>
+<tag>menus</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-12T16:36:24.662374" elapsed="4.905496"/>
+</test>
+<test id="s1-t7" name="TC_MENU_002_Create_New_Menu_Item" line="66">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-12T16:36:29.615794" level="INFO">${RANDOM} = 3265</msg>
+<var>${RANDOM}</var>
+<arg>4</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-12T16:36:29.567870" elapsed="0.047924"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:36:29.615794" level="INFO">${CREATED_MENU} = Test Burger 3265</msg>
+<var>${CREATED_MENU}</var>
+<arg>Test Burger ${RANDOM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-12T16:36:29.615794" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:36:29.615794" level="INFO">${CREATED_MENU} = Test Burger 3265</msg>
+<arg>${CREATED_MENU}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-12T16:36:29.615794" elapsed="0.000000"/>
+</kw>
+<kw name="Create Menu Item" owner="restaurant_keywords">
+<kw name="Go To Menu Items" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:29.620619" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/menus'</msg>
+<arg>${MENUS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:36:29.620619" elapsed="2.425933"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Menus</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:32.046552" elapsed="0.016872"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:34.065376" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:32.063424" elapsed="2.001952"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:29.620619" elapsed="4.444757"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:34.065376" elapsed="0.038478"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:34.103854" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:34.103854" elapsed="3.779553"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:40.883931" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:37.883407" elapsed="3.000524"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'menu_name')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:40.883931" elapsed="0.027583"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:40.911514" level="INFO">Typing text 'Test Burger 3265' into text field 'xpath://input[contains(@name, 'menu_name')]'.</msg>
+<arg>xpath://input[contains(@name, 'menu_name')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:40.911514" elapsed="0.257726"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:41.169240" level="INFO">Typing text '12.99' into text field 'xpath://input[contains(@name, 'menu_price')]'.</msg>
+<arg>xpath://input[contains(@name, 'menu_price')]</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:41.169240" elapsed="0.201223"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:41.382040" level="INFO">Typing text '0' into text field 'xpath://input[contains(@name, 'menu_priority') or contains(@name, 'priority')]'.</msg>
+<arg>xpath://input[contains(@name, 'menu_priority') or contains(@name, 'priority')]</arg>
+<arg>${priority}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:41.370463" elapsed="0.146605"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:41.549511" level="INFO">Element 'xpath://input[contains(@name, 'menu_status') and @checked]' is displayed.</msg>
+<arg>xpath://input[contains(@name, 'menu_status') and @checked]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:41.517068" elapsed="0.033102"/>
+</kw>
+<msg time="2025-10-12T16:36:41.550170" level="INFO">${status_checked} = True</msg>
+<var>${status_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[contains(@name, 'menu_status') and @checked]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:36:41.517068" elapsed="0.033102"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:36:41.550170" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status_checked}</arg>
+<arg>Click Element</arg>
+<arg>xpath://label[contains(@for, 'menu_status')]</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:36:41.550170" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:36:41.550170" elapsed="0.311645"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:41.861815" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:41.861815" elapsed="0.193301"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:46.057463" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:42.057028" elapsed="4.000435"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:46.057463" elapsed="0.344252"/>
+</kw>
+<msg time="2025-10-12T16:36:46.401715" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:36:46.057463" elapsed="0.344252"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:36:46.401715" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:36:46.401715" elapsed="0.002987"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:46.057463" elapsed="0.347239"/>
+</kw>
+<arg>${CREATED_MENU}</arg>
+<arg>12.99</arg>
+<arg>0</arg>
+<status status="PASS" start="2025-10-12T16:36:29.615794" elapsed="16.788908"/>
+</kw>
+<kw name="Go To Menu Items" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:46.404702" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/menus'</msg>
+<arg>${MENUS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:36:46.404702" elapsed="2.980380"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Menus</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:49.385082" elapsed="0.014325"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:51.404590" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:49.404233" elapsed="2.000357"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:46.404702" elapsed="4.999888"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:51.429603" level="INFO">Current page contains text 'Test Burger 3265'.</msg>
+<arg>${CREATED_MENU}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:36:51.404590" elapsed="0.025013"/>
+</kw>
+<doc>TC_MENU_002: Create new menu item</doc>
+<tag>critical</tag>
+<tag>functional</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-10-12T16:36:29.567870" elapsed="21.861733"/>
+</test>
+<test id="s1-t8" name="TC_MENU_003_Edit_Menu_Price" line="76">
+<kw name="Edit Menu Price" owner="restaurant_keywords">
+<kw name="Go To Menu Items" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:51.445012" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/menus'</msg>
+<arg>${MENUS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:36:51.445012" elapsed="2.917219"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Menus</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:36:54.362742" elapsed="0.012459"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:56.375729" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:54.375201" elapsed="2.000528"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:36:51.445012" elapsed="4.930717"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:36:58.376210" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:36:56.375729" elapsed="2.000481"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:36:58.376210" elapsed="0.031900"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:36:58.408110" level="INFO">Clicking element 'xpath://tr[contains(., 'Boiled Plantain')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:36:58.408110" elapsed="2.938362"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:04.349855" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:01.346472" elapsed="3.003383"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'menu_price')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:04.349855" elapsed="0.036077"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'menu_price')]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:04.385932" elapsed="0.080270"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:04.466202" level="INFO">Typing text '8.99' into text field 'xpath://input[contains(@name, 'menu_price')]'.</msg>
+<arg>xpath://input[contains(@name, 'menu_price')]</arg>
+<arg>${new_price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:04.466202" elapsed="0.213833"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:37:04.680035" elapsed="0.328834"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:05.008869" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:05.008869" elapsed="0.198917"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:09.209632" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:05.208831" elapsed="4.000801"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:09.212677" elapsed="0.014099"/>
+</kw>
+<msg time="2025-10-12T16:37:09.227462" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:37:09.212677" elapsed="0.014785"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:37:09.227977" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:37:09.227977" elapsed="0.006041"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:09.210657" elapsed="0.023361"/>
+</kw>
+<arg>Boiled Plantain</arg>
+<arg>8.99</arg>
+<status status="PASS" start="2025-10-12T16:36:51.445012" elapsed="17.789006"/>
+</kw>
+<doc>TC_MENU_003: Edit menu item price</doc>
+<tag>functional</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-10-12T16:36:51.445012" elapsed="17.791027"/>
+</test>
+<test id="s1-t9" name="TC_MENU_004_Set_Stock_Quantity" line="81">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-12T16:37:09.245581" level="INFO">Stock management requires complex modal interaction with dynamic selectors</msg>
+<arg>Stock management requires complex modal interaction with dynamic selectors</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-12T16:37:09.245581" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-12T16:37:09.247599" level="INFO">Manual testing recommended for stock quantity updates</msg>
+<arg>Manual testing recommended for stock quantity updates</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-12T16:37:09.245581" elapsed="0.002018"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2025-10-12T16:37:09.247599" level="INFO">Execution passed with message:
+Stock management test skipped - requires manual testing</msg>
+<arg>Stock management test skipped - requires manual testing</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2025-10-12T16:37:09.247599" elapsed="0.000000">Stock management test skipped - requires manual testing</status>
+</kw>
+<doc>TC_MENU_004: Set stock quantity - SKIPPED (complex modal interaction)</doc>
+<tag>functional</tag>
+<tag>manual</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-10-12T16:37:09.240075" elapsed="0.007524">Stock management test skipped - requires manual testing</status>
+</test>
+<test id="s1-t10" name="TC_MENU_005_View_Allergens_Management" line="88">
+<kw name="Open Allergens" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:09.256772" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/allergens'</msg>
+<arg>${ALLERGENS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:37:09.252746" elapsed="2.746083"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Allergens</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:12.000846" elapsed="0.041537"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:14.044875" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:12.042383" elapsed="2.002492"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:09.252746" elapsed="4.792129"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:14.068169" level="INFO">Current page contains text 'Allergens'.</msg>
+<arg>Allergens</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:37:14.044875" elapsed="0.023294"/>
+</kw>
+<doc>TC_MENU_005: View allergens page</doc>
+<tag>functional</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-10-12T16:37:09.250633" elapsed="4.850143"/>
+</test>
+<test id="s1-t11" name="TC_MENU_006_Delete_Created_Menu_Item" line="94">
+<kw name="Delete Menu Item" owner="restaurant_keywords">
+<kw name="Go To Menu Items" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:14.107752" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/menus'</msg>
+<arg>${MENUS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:37:14.107752" elapsed="2.782439"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Menus</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:16.892966" elapsed="0.020184"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:18.914378" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:16.914234" elapsed="2.000144"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:14.107752" elapsed="4.806626"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:20.914900" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:18.914378" elapsed="2.000522"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:20.914900" elapsed="0.031317"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:20.947772" level="INFO">Clicking element 'xpath://tr[contains(., 'Test Burger 3265')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:20.946726" elapsed="0.110153"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:22.058293" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:21.056879" elapsed="1.001414"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:22.058293" elapsed="0.024813"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:22.083616" level="INFO">Clicking element 'xpath://button[contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:22.083106" elapsed="0.094374"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:23.177796" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:22.177480" elapsed="1.000316"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:23.177796" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-12T16:37:23.177796" elapsed="0.069558"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:26.249216" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:23.248832" elapsed="3.000384"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:26.251270" elapsed="0.913608"/>
+</kw>
+<msg time="2025-10-12T16:37:27.164878" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:37:26.251270" elapsed="0.913608"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:37:27.164878" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:37:27.164878" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:26.249216" elapsed="0.915662"/>
+</kw>
+<arg>${CREATED_MENU}</arg>
+<status status="PASS" start="2025-10-12T16:37:14.106244" elapsed="13.058634"/>
+</kw>
+<doc>TC_MENU_006: Delete test menu item</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-10-12T16:37:14.102225" elapsed="13.062653"/>
+</test>
+<test id="s1-t12" name="TC_CAT_001_View_Categories_List" line="102">
+<kw name="Go To Categories" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:27.164878" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/categories'</msg>
+<arg>${CATEGORIES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:37:27.164878" elapsed="2.478444"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Categories</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:29.643884" elapsed="0.034492"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:31.687437" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:29.678376" elapsed="2.009061"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:27.164878" elapsed="4.522559"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:31.716939" level="INFO">Current page contains text 'Specials'.</msg>
+<arg>Specials</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.687437" elapsed="0.029502"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:31.751427" level="INFO">Current page contains text 'Main Course'.</msg>
+<arg>Main Course</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.721974" elapsed="0.029453"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:31.784012" level="INFO">Current page contains text 'Desserts'.</msg>
+<arg>Desserts</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.751427" elapsed="0.032585"/>
+</kw>
+<doc>TC_CAT_001: View categories list</doc>
+<tag>categories</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-12T16:37:27.164878" elapsed="4.619134"/>
+</test>
+<test id="s1-t13" name="TC_CAT_002_Create_New_Category" line="110">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-12T16:37:31.786032" level="INFO">${RANDOM} = 047</msg>
+<var>${RANDOM}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.786032" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:37:31.786032" level="INFO">${CREATED_CATEGORY} = Vegan Options 047</msg>
+<var>${CREATED_CATEGORY}</var>
+<arg>Vegan Options ${RANDOM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.786032" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:37:31.786032" level="INFO">${CREATED_CATEGORY} = Vegan Options 047</msg>
+<arg>${CREATED_CATEGORY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.786032" elapsed="0.000000"/>
+</kw>
+<kw name="Create Category" owner="restaurant_keywords">
+<kw name="Go To Categories" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:31.790887" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/categories'</msg>
+<arg>${CATEGORIES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:37:31.790887" elapsed="2.368794"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Categories</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:34.159681" elapsed="0.038490"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:36.198576" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:34.198171" elapsed="2.000405"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:31.790887" elapsed="4.407689"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:36.198576" elapsed="0.023215"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:36.221791" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:36.221791" elapsed="3.735419"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:42.957847" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:39.957210" elapsed="3.000637"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'Category[name]') or contains(@name, '[name]')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:42.957847" elapsed="0.046560"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:43.004917" level="INFO">Typing text 'Vegan Options 047' into text field 'xpath://input[contains(@name, 'Category[name]') or contains(@name, '[name]')]'.</msg>
+<arg>xpath://input[contains(@name, 'Category[name]') or contains(@name, '[name]')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.004407" elapsed="0.220713"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:43.225120" level="INFO">Typing text '10' into text field 'xpath://input[contains(@name, 'priority')]'.</msg>
+<arg>xpath://input[contains(@name, 'priority')]</arg>
+<arg>${priority}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.225120" elapsed="0.153293"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:43.410242" level="INFO">Element 'xpath://input[contains(@name, 'status') and @checked]' is displayed.</msg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.378413" elapsed="0.031829"/>
+</kw>
+<msg time="2025-10-12T16:37:43.410242" level="INFO">${status_checked} = True</msg>
+<var>${status_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.378413" elapsed="0.031829"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:37:43.410242" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status_checked}</arg>
+<arg>Click Element</arg>
+<arg>xpath://label[contains(@for, 'status')]</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:37:43.410242" elapsed="0.004792"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.415034" elapsed="0.325752"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:43.740786" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.740786" elapsed="0.146170"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:47.903251" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:43.886956" elapsed="4.018025"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:47.904981" elapsed="0.016078"/>
+</kw>
+<msg time="2025-10-12T16:37:47.921059" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:37:47.904981" elapsed="0.016078"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:37:47.921059" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:37:47.921059" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:47.904981" elapsed="0.016078"/>
+</kw>
+<arg>${CREATED_CATEGORY}</arg>
+<arg>10</arg>
+<status status="PASS" start="2025-10-12T16:37:31.790887" elapsed="16.130172"/>
+</kw>
+<kw name="Go To Categories" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:47.921059" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/categories'</msg>
+<arg>${CATEGORIES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:37:47.921059" elapsed="2.474111"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Categories</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:50.395170" elapsed="0.020957"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:52.417803" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:50.416127" elapsed="2.001676"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:47.921059" elapsed="4.496744"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:52.465241" level="INFO">Current page contains text 'Vegan Options 047'.</msg>
+<arg>${CREATED_CATEGORY}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:37:52.417803" elapsed="0.047438"/>
+</kw>
+<doc>TC_CAT_002: Create new category</doc>
+<tag>categories</tag>
+<tag>critical</tag>
+<tag>functional</tag>
+<status status="PASS" start="2025-10-12T16:37:31.786032" elapsed="20.679209"/>
+</test>
+<test id="s1-t14" name="TC_CAT_003_Create_Sub_Category" line="120">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-12T16:37:52.465241" level="INFO">Sub-category creation requires complex dropdown interaction</msg>
+<arg>Sub-category creation requires complex dropdown interaction</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-12T16:37:52.465241" elapsed="0.000000"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2025-10-12T16:37:52.465241" level="INFO">Execution passed with message:
+Parent category selection requires manual testing</msg>
+<arg>Parent category selection requires manual testing</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2025-10-12T16:37:52.465241" elapsed="0.000000">Parent category selection requires manual testing</status>
+</kw>
+<doc>TC_CAT_003: Create sub-category (manual - complex parent selection)</doc>
+<tag>categories</tag>
+<tag>functional</tag>
+<tag>manual</tag>
+<status status="PASS" start="2025-10-12T16:37:52.465241" elapsed="0.000000">Parent category selection requires manual testing</status>
+</test>
+<test id="s1-t15" name="TC_CAT_004_Edit_Category_Priority" line="126">
+<kw name="Edit Category Priority" owner="restaurant_keywords">
+<kw name="Go To Categories" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:52.475202" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/categories'</msg>
+<arg>${CATEGORIES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:37:52.475202" elapsed="2.462085"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Categories</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:37:54.937287" elapsed="0.019618"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:56.957303" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:54.956905" elapsed="2.000398"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:37:52.475202" elapsed="4.482101"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:37:58.957608" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:37:56.957303" elapsed="2.000305"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:37:58.957608" elapsed="0.047266"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:37:59.004874" level="INFO">Clicking element 'xpath://tr[contains(., 'Desserts')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:37:59.004874" elapsed="2.735963"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:04.746964" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:01.746028" elapsed="3.000936"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'priority')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:04.746964" elapsed="0.043376"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'priority')]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:04.790340" elapsed="0.049344"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:04.840602" level="INFO">Typing text '1' into text field 'xpath://input[contains(@name, 'priority')]'.</msg>
+<arg>xpath://input[contains(@name, 'priority')]</arg>
+<arg>${new_priority}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:04.840602" elapsed="0.175076"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:38:05.016714" elapsed="0.312822"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:05.329536" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:05.329536" elapsed="0.161928"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:09.492503" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:05.492024" elapsed="4.000479"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:09.493539" elapsed="0.040473"/>
+</kw>
+<msg time="2025-10-12T16:38:09.534012" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:38:09.493539" elapsed="0.040473"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:38:09.534012" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:38:09.534012" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:09.493539" elapsed="0.040473"/>
+</kw>
+<arg>Desserts</arg>
+<arg>1</arg>
+<status status="PASS" start="2025-10-12T16:37:52.473178" elapsed="17.060834"/>
+</kw>
+<doc>TC_CAT_004: Edit category priority</doc>
+<tag>categories</tag>
+<tag>functional</tag>
+<status status="PASS" start="2025-10-12T16:37:52.473178" elapsed="17.060834"/>
+</test>
+<test id="s1-t16" name="TC_CAT_005_Delete_Created_Category" line="131">
+<kw name="Delete Category" owner="restaurant_keywords">
+<kw name="Go To Categories" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:09.534012" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/categories'</msg>
+<arg>${CATEGORIES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:38:09.534012" elapsed="3.019618"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Categories</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:12.560955" elapsed="0.008370"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:14.570198" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:12.569325" elapsed="2.000873"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:09.534012" elapsed="5.036186"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:16.570815" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:14.570198" elapsed="2.000617"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:16.570815" elapsed="0.049169"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:16.631864" level="INFO">Clicking element 'xpath://tr[contains(., 'Vegan Options 047')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:16.631007" elapsed="0.138889"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:17.771501" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:16.769896" elapsed="1.001605"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:17.771501" elapsed="0.031265"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:17.803799" level="INFO">Clicking element 'xpath://button[contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:17.803283" elapsed="0.110873"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:18.914205" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:17.914156" elapsed="1.000049"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:18.914205" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-12T16:38:18.914205" elapsed="0.104156"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:22.018522" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:19.018361" elapsed="3.000161"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:22.022163" elapsed="0.234370"/>
+</kw>
+<msg time="2025-10-12T16:38:22.256533" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:38:22.020398" elapsed="0.236135"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:38:22.256533" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:38:22.256533" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:22.020398" elapsed="0.236135"/>
+</kw>
+<arg>${CREATED_CATEGORY}</arg>
+<status status="PASS" start="2025-10-12T16:38:09.534012" elapsed="12.722521"/>
+</kw>
+<doc>TC_CAT_005: Delete test category</doc>
+<tag>categories</tag>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<status status="PASS" start="2025-10-12T16:38:09.534012" elapsed="12.722521"/>
+</test>
+<test id="s1-t17" name="TC_MEAL_001_View_Mealtimes_List" line="139">
+<kw name="Go To Mealtimes" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:22.256533" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mealtimes'</msg>
+<arg>${MEALTIMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:38:22.256533" elapsed="2.543797"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mealtimes</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:24.800330" elapsed="0.014518"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:26.815356" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:24.814848" elapsed="2.000508"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:22.256533" elapsed="4.558823"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:26.842434" level="INFO">Current page contains text 'Breakfast'.</msg>
+<arg>Breakfast</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.815356" elapsed="0.027078"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:26.871751" level="INFO">Current page contains text 'Lunch'.</msg>
+<arg>Lunch</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.844456" elapsed="0.030628"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:26.922406" level="INFO">Current page contains text 'Dinner'.</msg>
+<arg>Dinner</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.875084" elapsed="0.047322"/>
+</kw>
+<doc>TC_MEAL_001: View mealtimes list</doc>
+<tag>mealtimes</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-10-12T16:38:22.256533" elapsed="4.667569"/>
+</test>
+<test id="s1-t18" name="TC_MEAL_002_Create_New_Mealtime" line="147">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-12T16:38:26.924102" level="INFO">${RANDOM} = 769</msg>
+<var>${RANDOM}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:38:26.924102" level="INFO">${CREATED_MEALTIME} = Afternoon Tea 769</msg>
+<var>${CREATED_MEALTIME}</var>
+<arg>Afternoon Tea ${RANDOM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:38:26.924102" level="INFO">${CREATED_MEALTIME} = Afternoon Tea 769</msg>
+<arg>${CREATED_MEALTIME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="0.000000"/>
+</kw>
+<kw name="Create Mealtime" owner="restaurant_keywords">
+<kw name="Go To Mealtimes" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:26.924102" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mealtimes'</msg>
+<arg>${MEALTIMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="2.663546"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mealtimes</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:29.588135" elapsed="0.018672"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:31.607350" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:29.606807" elapsed="2.000543"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="4.683248"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:31.607350" elapsed="0.022246"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:31.629596" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:31.629596" elapsed="3.260008"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:37.899329" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:34.898987" elapsed="3.000342"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'mealtime_name') or contains(@name, '[name]')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:37.899846" elapsed="0.034064"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:37.933910" level="INFO">Typing text 'Afternoon Tea 769' into text field 'xpath://input[contains(@name, 'mealtime_name') or contains(@name, '[name]')]'.</msg>
+<arg>xpath://input[contains(@name, 'mealtime_name') or contains(@name, '[name]')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:37.933910" elapsed="0.248183"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:38.186035" level="INFO">Typing text '15:00' into text field 'xpath://input[contains(@name, 'start_time')]'.</msg>
+<arg>xpath://input[contains(@name, 'start_time')]</arg>
+<arg>${start}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:38.186035" elapsed="0.158414"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:38.344449" level="INFO">Typing text '17:00' into text field 'xpath://input[contains(@name, 'end_time')]'.</msg>
+<arg>xpath://input[contains(@name, 'end_time')]</arg>
+<arg>${end}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:38.344449" elapsed="0.149472"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:38.510108" level="INFO">Element 'xpath://input[contains(@name, 'status') and @checked]' is displayed.</msg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:38.493921" elapsed="0.016187"/>
+</kw>
+<msg time="2025-10-12T16:38:38.510108" level="INFO">${status_checked} = True</msg>
+<var>${status_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:38:38.493921" elapsed="0.016187"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:38:38.510108" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status_checked}</arg>
+<arg>Click Element</arg>
+<arg>xpath://label[contains(@for, 'status')]</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:38:38.510108" elapsed="0.011759"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:38:38.521867" elapsed="0.313704"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:38.835571" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:38.835571" elapsed="0.224252"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:43.061724" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:39.059823" elapsed="4.001901"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:43.063484" elapsed="0.013239"/>
+</kw>
+<msg time="2025-10-12T16:38:43.077317" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:38:43.061724" elapsed="0.015593"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:38:43.077835" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:38:43.077835" elapsed="0.002012"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:43.061724" elapsed="0.018123"/>
+</kw>
+<arg>${CREATED_MEALTIME}</arg>
+<arg>15:00</arg>
+<arg>17:00</arg>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="16.155745"/>
+</kw>
+<kw name="Go To Mealtimes" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:43.079847" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mealtimes'</msg>
+<arg>${MEALTIMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:38:43.079847" elapsed="0.987953"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mealtimes</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:44.067800" elapsed="1.547211"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:47.616066" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:45.615011" elapsed="2.001055"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:43.079847" elapsed="4.536219"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:47.644150" level="INFO">Current page contains text 'Afternoon Tea 769'.</msg>
+<arg>${CREATED_MEALTIME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:38:47.616066" elapsed="0.028084"/>
+</kw>
+<doc>TC_MEAL_002: Create new mealtime</doc>
+<tag>critical</tag>
+<tag>functional</tag>
+<tag>mealtimes</tag>
+<status status="PASS" start="2025-10-12T16:38:26.924102" elapsed="20.720048"/>
+</test>
+<test id="s1-t19" name="TC_MEAL_003_Edit_Lunch_End_Time" line="157">
+<kw name="Edit Mealtime End" owner="restaurant_keywords">
+<kw name="Go To Mealtimes" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:47.644150" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mealtimes'</msg>
+<arg>${MEALTIMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:38:47.644150" elapsed="2.512398"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mealtimes</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:38:50.157682" elapsed="0.042537"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:52.200720" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:50.200219" elapsed="2.000501"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:38:47.644150" elapsed="4.556570"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:54.200942" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:52.200720" elapsed="2.000222"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:54.200942" elapsed="0.045772"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:54.246714" level="INFO">Clicking element 'xpath://tr[contains(., 'Lunch')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:54.246714" elapsed="2.557239"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:38:59.805059" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:38:56.803953" elapsed="3.001106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'end_time')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:38:59.805059" elapsed="0.025628"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'end_time')]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:59.830687" elapsed="0.090235"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:38:59.921434" level="INFO">Typing text '15:00' into text field 'xpath://input[contains(@name, 'end_time')]'.</msg>
+<arg>xpath://input[contains(@name, 'end_time')]</arg>
+<arg>${new_end}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:38:59.921434" elapsed="0.252019"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:39:00.173453" elapsed="0.321681"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:00.495134" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:00.495134" elapsed="0.166364"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:04.662462" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:00.662067" elapsed="4.000395"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:04.664491" elapsed="0.030399"/>
+</kw>
+<msg time="2025-10-12T16:39:04.694890" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:39:04.662462" elapsed="0.032428"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:39:04.694890" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:39:04.694890" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:04.662462" elapsed="0.032428"/>
+</kw>
+<arg>Lunch</arg>
+<arg>15:00</arg>
+<status status="PASS" start="2025-10-12T16:38:47.644150" elapsed="17.050740"/>
+</kw>
+<doc>TC_MEAL_003: Edit mealtime end time</doc>
+<tag>functional</tag>
+<tag>mealtimes</tag>
+<status status="PASS" start="2025-10-12T16:38:47.644150" elapsed="17.050740"/>
+</test>
+<test id="s1-t20" name="TC_MEAL_004_Create_Overlapping_Mealtime" line="162">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-12T16:39:04.694890" level="INFO">${RANDOM} = 976</msg>
+<var>${RANDOM}</var>
+<arg>3</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-12T16:39:04.694890" elapsed="0.010959"/>
+</kw>
+<kw name="Create Mealtime" owner="restaurant_keywords">
+<kw name="Go To Mealtimes" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:04.705849" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mealtimes'</msg>
+<arg>${MEALTIMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:39:04.705849" elapsed="2.525749"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mealtimes</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:07.231598" elapsed="0.016927"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:09.250436" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:07.249764" elapsed="2.000672"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:04.705849" elapsed="4.544587"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:09.251223" elapsed="0.052272"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:09.304008" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:09.304008" elapsed="2.722167"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:15.026626" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:12.026175" elapsed="3.000451"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'mealtime_name') or contains(@name, '[name]')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.026626" elapsed="0.023320"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:15.051959" level="INFO">Typing text 'Late Lunch 976' into text field 'xpath://input[contains(@name, 'mealtime_name') or contains(@name, '[name]')]'.</msg>
+<arg>xpath://input[contains(@name, 'mealtime_name') or contains(@name, '[name]')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.051959" elapsed="0.243309"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:15.299271" level="INFO">Typing text '13:00' into text field 'xpath://input[contains(@name, 'start_time')]'.</msg>
+<arg>xpath://input[contains(@name, 'start_time')]</arg>
+<arg>${start}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.299271" elapsed="0.155603"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:15.454874" level="INFO">Typing text '16:00' into text field 'xpath://input[contains(@name, 'end_time')]'.</msg>
+<arg>xpath://input[contains(@name, 'end_time')]</arg>
+<arg>${end}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.454874" elapsed="0.150144"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:15.620942" level="INFO">Element 'xpath://input[contains(@name, 'status') and @checked]' is displayed.</msg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.605018" elapsed="0.015924"/>
+</kw>
+<msg time="2025-10-12T16:39:15.620942" level="INFO">${status_checked} = True</msg>
+<var>${status_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.605018" elapsed="0.026579"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:39:15.631597" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status_checked}</arg>
+<arg>Click Element</arg>
+<arg>xpath://label[contains(@for, 'status')]</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:39:15.631597" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.631597" elapsed="0.314685"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:15.946282" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:15.946282" elapsed="0.215117"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:20.162390" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:16.162051" elapsed="4.000339"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:20.162390" elapsed="0.013868"/>
+</kw>
+<msg time="2025-10-12T16:39:20.176258" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:39:20.162390" elapsed="0.013868"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:39:20.176258" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:39:20.176258" elapsed="0.009567"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:20.162390" elapsed="0.023435"/>
+</kw>
+<arg>Late Lunch ${RANDOM}</arg>
+<arg>13:00</arg>
+<arg>16:00</arg>
+<status status="PASS" start="2025-10-12T16:39:04.705849" elapsed="15.479976"/>
+</kw>
+<doc>TC_MEAL_004: Create overlapping mealtime</doc>
+<tag>functional</tag>
+<tag>mealtimes</tag>
+<status status="PASS" start="2025-10-12T16:39:04.694890" elapsed="15.490935"/>
+</test>
+<test id="s1-t21" name="TC_MEAL_005_Delete_Created_Mealtime" line="169">
+<kw name="Delete Mealtime" owner="restaurant_keywords">
+<kw name="Go To Mealtimes" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:20.191091" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/mealtimes'</msg>
+<arg>${MEALTIMES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:39:20.191091" elapsed="1.040111"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mealtimes</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:21.231977" elapsed="1.580621"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:24.813163" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:22.812598" elapsed="2.000565"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:20.191091" elapsed="4.622072"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:26.814114" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:24.813163" elapsed="2.000951"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:26.814114" elapsed="0.029289"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:26.843403" level="INFO">Clicking element 'xpath://tr[contains(., 'Afternoon Tea 769')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:26.843403" elapsed="0.176874"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:28.021338" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:27.020277" elapsed="1.001061"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:28.021338" elapsed="0.029334"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:28.050672" level="INFO">Clicking element 'xpath://button[contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:28.050672" elapsed="0.120386"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:29.171718" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:28.171058" elapsed="1.000660"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:29.171718" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-12T16:39:29.171718" elapsed="0.060401"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:32.233732" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:29.232119" elapsed="3.001613"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:32.234779" elapsed="0.455556"/>
+</kw>
+<msg time="2025-10-12T16:39:32.690335" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:39:32.234779" elapsed="0.455556"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:39:32.690335" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:39:32.690335" elapsed="0.005475"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:32.234265" elapsed="0.461545"/>
+</kw>
+<arg>${CREATED_MEALTIME}</arg>
+<status status="PASS" start="2025-10-12T16:39:20.189076" elapsed="12.506734"/>
+</kw>
+<doc>TC_MEAL_005: Delete test mealtime</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>mealtimes</tag>
+<status status="PASS" start="2025-10-12T16:39:20.187972" elapsed="12.507838"/>
+</test>
+<test id="s1-t22" name="TC_TABLE_001_View_Tables_List" line="177">
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:32.697872" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:39:32.697872" elapsed="2.540242"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:35.238114" elapsed="0.025314"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:37.264310" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:35.263428" elapsed="2.000882"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:32.697872" elapsed="4.566438"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:37.309519" level="INFO">Current page contains text 'Table 1'.</msg>
+<arg>Table 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.266323" elapsed="0.043196"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:37.332420" level="INFO">${count} = 15</msg>
+<var>${count}</var>
+<arg>xpath://table//tbody//tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.309519" elapsed="0.022901"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt;= 10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.332420" elapsed="0.000000"/>
+</kw>
+<doc>TC_TABLE_001: View tables list</doc>
+<tag>smoke</tag>
+<tag>tables</tag>
+<status status="PASS" start="2025-10-12T16:39:32.697872" elapsed="4.634548"/>
+</test>
+<test id="s1-t23" name="TC_TABLE_002_Create_New_Table" line="185">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-12T16:39:37.338564" level="INFO">${RANDOM} = 45</msg>
+<var>${RANDOM}</var>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.338564" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:39:37.338564" level="INFO">${CREATED_TABLE} = Table Test 45</msg>
+<var>${CREATED_TABLE}</var>
+<arg>Table Test ${RANDOM}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.338564" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-12T16:39:37.338564" level="INFO">${CREATED_TABLE} = Table Test 45</msg>
+<arg>${CREATED_TABLE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.338564" elapsed="0.000000"/>
+</kw>
+<kw name="Create Table" owner="restaurant_keywords">
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:37.344627" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:39:37.344627" elapsed="2.738295"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:39:40.082922" elapsed="0.033368"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:42.117127" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:40.116290" elapsed="2.000837"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:39:37.338564" elapsed="4.778563"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:42.117127" elapsed="0.045366"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:42.162493" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:42.162493" elapsed="3.218831"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:48.381668" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:45.381324" elapsed="3.000344"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'table_name') or contains(@name, '[name]')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:48.381668" elapsed="0.022715"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:48.404383" level="INFO">Typing text 'Table Test 45' into text field 'xpath://input[contains(@name, 'table_name') or contains(@name, '[name]')]'.</msg>
+<arg>xpath://input[contains(@name, 'table_name') or contains(@name, '[name]')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:48.404383" elapsed="0.226360"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:48.630743" level="INFO">Typing text '2' into text field 'xpath://input[contains(@name, 'min_capacity')]'.</msg>
+<arg>xpath://input[contains(@name, 'min_capacity')]</arg>
+<arg>${min}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:48.630743" elapsed="0.183208"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:48.813951" level="INFO">Typing text '6' into text field 'xpath://input[contains(@name, 'max_capacity')]'.</msg>
+<arg>xpath://input[contains(@name, 'max_capacity')]</arg>
+<arg>${max}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:48.813951" elapsed="0.133169"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:48.954420" level="INFO">Typing text '0' into text field 'xpath://input[contains(@name, 'priority')]'.</msg>
+<arg>xpath://input[contains(@name, 'priority')]</arg>
+<arg>${priority}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:48.947120" elapsed="0.150858"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'extra_capacity')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:49.097978" elapsed="0.046984"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:49.146944" level="INFO">Typing text '2' into text field 'xpath://input[contains(@name, 'extra_capacity')]'.</msg>
+<arg>xpath://input[contains(@name, 'extra_capacity')]</arg>
+<arg>2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:49.146944" elapsed="0.150530"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:54.639668" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-73.png"&gt;&lt;img src="selenium-screenshot-73.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-12T16:39:54.639668" level="FAIL">Element 'xpath://select[contains(@name, 'location')]' not visible after 5 seconds.</msg>
+<arg>xpath://select[contains(@name, 'location')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-12T16:39:49.297474" elapsed="5.342194">Element 'xpath://select[contains(@name, 'location')]' not visible after 5 seconds.</status>
+</kw>
+<msg time="2025-10-12T16:39:54.639668" level="INFO">${location_dropdown} = False</msg>
+<var>${location_dropdown}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://select[contains(@name, 'location')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:39:49.297474" elapsed="5.342194"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'ss-main')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:54.647854" elapsed="0.025173"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:54.673027" level="INFO">Clicking element 'xpath://div[contains(@class, 'ss-main')]'.</msg>
+<arg>xpath://div[contains(@class, 'ss-main')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:54.673027" elapsed="0.110643"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:55.787359" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:54.783670" elapsed="1.003689"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'ss-option')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:55.787359" elapsed="0.037983"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:55.825342" level="INFO">Clicking element 'xpath:(//div[contains(@class, 'ss-option')])[1]'.</msg>
+<arg>xpath:(//div[contains(@class, 'ss-option')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:55.825342" elapsed="0.172852"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:39:56.998486" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:55.998194" elapsed="1.001332"/>
+</kw>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://div[contains(@class, 'ss-main')]</arg>
+<arg>timeout=10s</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>xpath://div[contains(@class, 'ss-main')]</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://div[contains(@class, 'ss-option')]</arg>
+<arg>timeout=10s</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>xpath:(//div[contains(@class, 'ss-option')])[1]</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-12T16:39:54.639668" elapsed="2.359858"/>
+</kw>
+<arg>${location_dropdown}</arg>
+<arg>Select From List By Label</arg>
+<arg>xpath://select[contains(@name, 'location')]</arg>
+<arg>Default</arg>
+<arg>ELSE</arg>
+<arg>Run Keywords</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://div[contains(@class, 'ss-main')]</arg>
+<arg>timeout=10s</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>xpath://div[contains(@class, 'ss-main')]</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath://div[contains(@class, 'ss-option')]</arg>
+<arg>timeout=10s</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>xpath:(//div[contains(@class, 'ss-option')])[1]</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-12T16:39:54.639668" elapsed="2.359858"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:57.038035" level="INFO">Element 'xpath://input[contains(@name, 'status') and @checked]' is displayed.</msg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:39:57.001027" elapsed="0.037008"/>
+</kw>
+<msg time="2025-10-12T16:39:57.038544" level="INFO">${status_checked} = True</msg>
+<var>${status_checked}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://input[contains(@name, 'status') and @checked]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:39:57.000517" elapsed="0.038027"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:39:57.038544" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status_checked}</arg>
+<arg>Click Element</arg>
+<arg>xpath://label[contains(@for, 'status')]</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:39:57.038544" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:39:57.038544" elapsed="0.301778"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:39:57.340322" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:39:57.340322" elapsed="0.174345"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:01.524895" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:39:57.514667" elapsed="4.010228"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:01.524895" elapsed="0.008398"/>
+</kw>
+<msg time="2025-10-12T16:40:01.533293" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:40:01.524895" elapsed="0.008398"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:40:01.533293" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:40:01.533293" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:01.524895" elapsed="0.008398"/>
+</kw>
+<arg>${CREATED_TABLE}</arg>
+<arg>2</arg>
+<arg>6</arg>
+<arg>0</arg>
+<status status="PASS" start="2025-10-12T16:39:37.338564" elapsed="24.194729"/>
+</kw>
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:01.548063" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:40:01.548063" elapsed="0.997807"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:02.545870" elapsed="1.726934"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:06.273638" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:04.272804" elapsed="2.000834"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:01.533293" elapsed="4.740345"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:06.303251" level="INFO">Current page contains text 'Table Test 45'.</msg>
+<arg>${CREATED_TABLE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:40:06.273638" elapsed="0.029613"/>
+</kw>
+<doc>TC_TABLE_002: Create new table</doc>
+<tag>critical</tag>
+<tag>functional</tag>
+<tag>tables</tag>
+<status status="PASS" start="2025-10-12T16:39:37.332420" elapsed="28.970831"/>
+</test>
+<test id="s1-t24" name="TC_TABLE_003_Edit_Table_Capacity" line="195">
+<kw name="Edit Table Max Capacity" owner="restaurant_keywords">
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:06.308910" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:40:06.308910" elapsed="2.443371"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:08.752281" elapsed="0.019110"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:10.772181" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:08.771391" elapsed="2.000790"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:06.308910" elapsed="4.463271"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:12.774919" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:10.772181" elapsed="2.002738"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:40:12.774919" elapsed="0.017683"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:12.792602" level="INFO">Clicking element 'xpath://tr[contains(., 'Table 1')]//a[contains(@class, 'btn-edit')]'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//a[contains(@class, 'btn-edit')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:12.792602" elapsed="2.671331"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:18.466323" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:15.463933" elapsed="3.002390"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'max_capacity')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:40:18.466323" elapsed="0.019929"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'max_capacity')]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:18.486252" elapsed="0.054450"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:18.541212" level="INFO">Typing text '12' into text field 'xpath://input[contains(@name, 'max_capacity')]'.</msg>
+<arg>xpath://input[contains(@name, 'max_capacity')]</arg>
+<arg>${new_max}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:18.541212" elapsed="0.155012"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:40:18.696224" elapsed="0.306938"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:19.003162" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:19.003162" elapsed="0.181898"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:23.186919" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:19.185708" elapsed="4.001211"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:23.186919" elapsed="0.015797"/>
+</kw>
+<msg time="2025-10-12T16:40:23.202716" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:40:23.186919" elapsed="0.016309"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:40:23.203228" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:40:23.203228" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:23.186919" elapsed="0.016309"/>
+</kw>
+<arg>Table 1</arg>
+<arg>12</arg>
+<status status="PASS" start="2025-10-12T16:40:06.303251" elapsed="16.899977"/>
+</kw>
+<doc>TC_TABLE_003: Edit table max capacity</doc>
+<tag>functional</tag>
+<tag>tables</tag>
+<status status="PASS" start="2025-10-12T16:40:06.303251" elapsed="16.899977"/>
+</test>
+<test id="s1-t25" name="TC_TABLE_004_Invalid_Capacity_Values" line="200">
+<kw name="Try Create Invalid Table" owner="restaurant_keywords">
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:23.203228" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:40:23.203228" elapsed="2.572414"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:25.775642" elapsed="0.022070"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:27.798222" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:25.797712" elapsed="2.000510"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:23.203228" elapsed="4.594994"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:40:27.798222" elapsed="0.018042"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:27.821472" level="INFO">Clicking element 'xpath://a[contains(@href, '/create') or contains(., 'New')]'.</msg>
+<arg>xpath://a[contains(@href, '/create') or contains(., 'New')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:27.820961" elapsed="2.560157"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:33.382091" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:30.381118" elapsed="3.000973"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[contains(@name, 'table_name') or contains(@name, '[name]')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:40:33.382091" elapsed="0.039520"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:33.425424" level="INFO">Typing text 'Invalid Table' into text field 'xpath://input[contains(@name, 'table_name') or contains(@name, '[name]')]'.</msg>
+<arg>xpath://input[contains(@name, 'table_name') or contains(@name, '[name]')]</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:33.421611" elapsed="0.250337"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:33.677230" level="INFO">Typing text '10' into text field 'xpath://input[contains(@name, 'min_capacity')]'.</msg>
+<arg>xpath://input[contains(@name, 'min_capacity')]</arg>
+<arg>${min}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:33.671948" elapsed="0.175079"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:33.850535" level="INFO">Typing text '2' into text field 'xpath://input[contains(@name, 'max_capacity')]'.</msg>
+<arg>xpath://input[contains(@name, 'max_capacity')]</arg>
+<arg>${max}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:33.847027" elapsed="0.124612"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-12T16:40:33.971639" elapsed="0.302096"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:34.273735" level="INFO">Clicking button 'xpath://button[@data-request='onSave']'.</msg>
+<arg>xpath://button[@data-request='onSave']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:34.273735" elapsed="0.127498"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:37.402327" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:34.401233" elapsed="3.001094"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:37.417860" level="INFO">Current page contains element 'xpath://*[contains(@class, 'alert-danger') or contains(@class, 'error') or contains(., 'error')]'.</msg>
+<arg>xpath://*[contains(@class, 'alert-danger') or contains(@class, 'error') or contains(., 'error')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.402327" elapsed="0.015533"/>
+</kw>
+<msg time="2025-10-12T16:40:37.417860" level="INFO">${has_error} = True</msg>
+<var>${has_error}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath://*[contains(@class, 'alert-danger') or contains(@class, 'error') or contains(., 'error')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.402327" elapsed="0.015533"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:37.611379" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-74.png"&gt;&lt;img src="selenium-screenshot-74.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-12T16:40:37.611379" level="FAIL">Page should have contained element 'xpath://*[contains(@class, 'alert-success')]' but did not.</msg>
+<arg>xpath://*[contains(@class, 'alert-success')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-12T16:40:37.422472" elapsed="0.192456">Page should have contained element 'xpath://*[contains(@class, 'alert-success')]' but did not.</status>
+</kw>
+<msg time="2025-10-12T16:40:37.615441" level="INFO">${has_success} = False</msg>
+<var>${has_success}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath://*[contains(@class, 'alert-success')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.417860" elapsed="0.197581"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-12T16:40:37.616457" level="INFO">System correctly shows validation error</msg>
+<arg>System correctly shows validation error</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.615949" elapsed="0.000508"/>
+</kw>
+<arg>${has_error}</arg>
+<arg>Log</arg>
+<arg>System correctly shows validation error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.615441" elapsed="0.001016"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${has_success}</arg>
+<arg>Log</arg>
+<arg>System allows invalid capacity values - potential bug</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.616965" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${has_success}</arg>
+<arg>Run Keywords</arg>
+<arg>Go To Tables</arg>
+<arg>AND</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Delete Table</arg>
+<arg>${name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.617473" elapsed="0.000000"/>
+</kw>
+<arg>Invalid Table</arg>
+<arg>10</arg>
+<arg>2</arg>
+<status status="PASS" start="2025-10-12T16:40:23.203228" elapsed="14.414245"/>
+</kw>
+<doc>TC_TABLE_004: Try invalid capacity values</doc>
+<tag>functional</tag>
+<tag>tables</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-12T16:40:23.203228" elapsed="14.414754"/>
+</test>
+<test id="s1-t26" name="TC_TABLE_005_Delete_Created_Table" line="206">
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:37.617982" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:40:37.617982" elapsed="2.854215"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:40.472197" elapsed="0.050750"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:42.524547" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:40.522947" elapsed="2.001600"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:37.617982" elapsed="4.907660"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:44.527703" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:42.525642" elapsed="2.002061"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:44.551726" level="INFO">Current page contains text 'Table Test 45'.</msg>
+<arg>${CREATED_TABLE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-12T16:40:44.529265" elapsed="0.022461"/>
+</kw>
+<msg time="2025-10-12T16:40:44.553745" level="INFO">${table_exists} = True</msg>
+<var>${table_exists}</var>
+<arg>Page Should Contain</arg>
+<arg>${CREATED_TABLE}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:40:44.527703" elapsed="0.026042"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Delete Table" owner="restaurant_keywords">
+<kw name="Go To Tables" owner="restaurant_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:44.557841" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/admin/tables'</msg>
+<arg>${TABLES_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-12T16:40:44.557841" elapsed="2.461744"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Tables</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:47.019585" elapsed="0.025744"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:49.048915" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:47.045329" elapsed="2.003586"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:44.557841" elapsed="4.491074"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:51.049537" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:49.048915" elapsed="2.000622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:40:51.049537" elapsed="0.028855"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:51.078392" level="INFO">Clicking element 'xpath://tr[contains(., 'Table Test 45')]//input[@type='checkbox']'.</msg>
+<arg>xpath://tr[contains(., '${name}')]//input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:51.078392" elapsed="0.123498"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:52.202510" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:51.201890" elapsed="1.000620"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-12T16:40:52.202510" elapsed="0.023658"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:52.226168" level="INFO">Clicking element 'xpath://button[contains(., 'Delete')]'.</msg>
+<arg>xpath://button[contains(., 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-12T16:40:52.226168" elapsed="0.096061"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:53.325009" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:52.322963" elapsed="1.002046"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:53.327034" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>action=ACCEPT</arg>
+<arg>timeout=10s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-10-12T16:40:53.325009" elapsed="0.055196"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:56.380634" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:53.380205" elapsed="3.000429"/>
+</kw>
+<kw name="Design Verify Success Message" owner="restaurant_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-12T16:40:56.380634" elapsed="0.208775"/>
+</kw>
+<msg time="2025-10-12T16:40:56.589409" level="INFO">${has_success} = True</msg>
+<var>${has_success}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(@class,'alert-success')]</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-12T16:40:56.380634" elapsed="0.208775"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-10-12T16:40:56.589409" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${has_success}</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath://*[contains(text(),'success')]</arg>
+<arg>timeout=5s</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-10-12T16:40:56.589409" elapsed="0.004279"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:56.380634" elapsed="0.213054"/>
+</kw>
+<arg>${CREATED_TABLE}</arg>
+<status status="PASS" start="2025-10-12T16:40:44.557841" elapsed="12.035847"/>
+</kw>
+<arg>${table_exists}</arg>
+<arg>Delete Table</arg>
+<arg>${CREATED_TABLE}</arg>
+<arg>ELSE</arg>
+<arg>Pass Execution</arg>
+<arg>Skipped - table was not found (creation may have failed)</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-12T16:40:44.557330" elapsed="12.036358"/>
+</kw>
+<doc>TC_TABLE_005: Delete test table</doc>
+<tag>cleanup</tag>
+<tag>functional</tag>
+<tag>tables</tag>
+<status status="PASS" start="2025-10-12T16:40:37.617982" elapsed="18.975706"/>
+</test>
+<kw name="Logout And Close" owner="restaurant_keywords" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-12T16:40:56.593688" level="INFO">Clicking element 'xpath://a[contains(@href, 'logout')]'.</msg>
+<msg time="2025-10-12T16:40:56.834370" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-75.png"&gt;&lt;img src="selenium-screenshot-75.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-12T16:40:56.834989" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=141.0.7390.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7d6a91e45+80197]
+	GetHandleVerifier [0x0x7ff7d6a91ea0+80288]
+	(No symbol) [0x0x7ff7d681011c]
+	(No symbol) [0x0x7ff7d6869243]
+	(No symbol) [0x0x7ff7d685abc8]
+	(No symbol) [0x0x7ff7d689037a]
+	(No symbol) [0x0x7ff7d685a456]
+	(No symbol) [0x0x7ff7d6890590]
+	(No symbol) [0x0x7ff7d68b87fb]
+	(No symbol) [0x0x7ff7d6890153]
+	(No symbol) [0x0x7ff7d6858b02]
+	(No symbol) [0x0x7ff7d68598d3]
+	GetHandleVerifier [0x0x7ff7d6d4e7cd+2949837]
+	GetHandleVerifier [0x0x7ff7d6d48bfa+2926330]
+	GetHandleVerifier [0x0x7ff7d6d68657+3055959]
+	GetHandleVerifier [0x0x7ff7d6aacf7e+191102]
+	GetHandleVerifier [0x0x7ff7d6ab503f+224063]
+	GetHandleVerifier [0x0x7ff7d6a9aef4+117236]
+	GetHandleVerifier [0x0x7ff7d6a9b0a9+117673]
+	GetHandleVerifier [0x0x7ff7d6a81038+11064]
+	BaseThreadInitThunk [0x0x7ffd45d1e8d7+23]
+	RtlUserThreadStart [0x0x7ffd47408d9c+44]
+</msg>
+<arg>xpath://a[contains(@href, 'logout')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-10-12T16:40:56.593688" elapsed="0.244673">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=141.0.7390.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7d6a91e45+80197]
+	GetHandleVerifier [0x0x7ff7d6a91ea0+80288]
+	(No symbol) [0x0x7ff7d681011c]
+	(No symbol) [0x0x7ff7d6869243]
+	(No symbol) [0x0x7ff7d685abc8]
+	(No symbol) [0x0x7ff7d689037a]
+	(No symbol) [0x0x7ff7d685a456]
+	(No symbol) [0x0x7ff7d6890590]
+	(No symbol) [0x0x7ff7d68b87fb]
+	(No symbol) [0x0x7ff7d6890153]
+	(No symbol) [0x0x7ff7d6858b02]
+	(No symbol) [0x0x7ff7d68598d3]
+	GetHandleVerifier [0x0x7ff7d6d4e7cd+2949837]
+	GetHandleVerifier [0x0x7ff7d6d48bfa+2926330]
+	GetHandleVerifier [0x0x7ff7d6d68657+3055959]
+	GetHandleVerifier [0x0x7ff7d6aacf7e+191102]
+	GetHandleVerifier [0x0x7ff7d6ab503f+224063]
+	GetHandleVerifier [0x0x7ff7d6a9aef4+117236]
+	GetHandleVerifier [0x0x7ff7d6a9b0a9+117673]
+	GetHandleVerifier [0x0x7ff7d6a81038+11064]
+	BaseThreadInitThunk [0x0x7ffd45d1e8d7+23]
+	RtlUserThreadStart [0x0x7ffd47408d9c+44]
+</status>
+</kw>
+<arg>Click Element</arg>
+<arg>xpath://a[contains(@href, 'logout')]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-12T16:40:56.593688" elapsed="0.244673"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-12T16:40:57.840824" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-12T16:40:56.838361" elapsed="1.002463"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-10-12T16:40:57.840824" elapsed="2.664970"/>
+</kw>
+<status status="PASS" start="2025-10-12T16:40:56.593688" elapsed="3.912106"/>
+</kw>
+<doc>Automated Functional Tests for Restaurant Module (26 Test Cases)</doc>
+<status status="PASS" start="2025-10-12T16:35:08.256713" elapsed="352.251097"/>
+</suite>
+<statistics>
+<total>
+<stat pass="26" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">categories</stat>
+<stat pass="5" fail="0" skip="0">cleanup</stat>
+<stat pass="5" fail="0" skip="0">critical</stat>
+<stat pass="21" fail="0" skip="0">functional</stat>
+<stat pass="5" fail="0" skip="0">locations</stat>
+<stat pass="3" fail="0" skip="0">manual</stat>
+<stat pass="5" fail="0" skip="0">mealtimes</stat>
+<stat pass="6" fail="0" skip="0">menus</stat>
+<stat pass="5" fail="0" skip="0">smoke</stat>
+<stat pass="5" fail="0" skip="0">tables</stat>
+<stat pass="1" fail="0" skip="0">validation</stat>
+</tag>
+<suite>
+<stat name="Restaurant Tests" id="s1" pass="26" fail="0" skip="0">Restaurant Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-12T16:35:09.098290" level="WARN">The chromedriver version (140.0.7339.208) detected in PATH at C:\Users\Anand\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (141.0.7390.54); currently, chromedriver 141.0.7390.76 is recommended for chrome 141.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-10-12T16:35:49.035255" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:36:12.209290" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:36:24.565004" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:36:41.550170" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:36:46.401715" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:37:09.227977" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:37:27.164878" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:37:43.410242" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:37:47.921059" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:38:09.534012" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:38:22.256533" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:38:38.510108" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:38:43.077835" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:39:04.694890" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:39:15.631597" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:39:20.176258" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:39:32.690335" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:39:57.038544" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:40:01.533293" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:40:23.203228" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-10-12T16:40:56.589409" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+</errors>
+</robot>
