@@ -1,0 +1,1881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-10-23T21:39:47.255951" rpa="false" schemaversion="5">
+<suite id="s1" name="Tastyigniter Menu Guest Invalid" source="c:\Users\heyit\OneDrive\Documents\FINAL_AUTOROBOT\tastyigniter_menu_guest_invalid.robot">
+<test id="s1-t1" name="All Fields Empty → Show Required Validations" line="172">
+<kw name="Open Menus Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:47.502793" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/default/menus'.</msg>
+<arg>${MENUS_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:39:47.502555" elapsed="2.210653"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.713495" elapsed="0.027702"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.741436" elapsed="0.008043"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:49.758644" level="INFO">Current page contains element 'css=button.btn-cart'.</msg>
+<arg>css=button.btn-cart</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.749981" elapsed="0.008842"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>css=button.btn-cart</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.749732" elapsed="0.009215"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:47.501973" elapsed="2.257064"/>
+</kw>
+<kw name="Start Checkout Fresh">
+<kw name="Add Puff Puff To Cart (with settle)">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_ADD_PUFF}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.760281" elapsed="0.015972"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:49.777001" level="INFO">Clicking element 'css=button.btn-cart[data-menu-id="1"]'.</msg>
+<arg>${LOC_ADD_PUFF}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.776632" elapsed="0.079512"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:39:51.857636" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:39:49.856643" elapsed="2.001221"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:51.867679" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.858648" elapsed="0.009174"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.858511" elapsed="0.009393"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.868176" elapsed="0.012328"/>
+</kw>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.868026" elapsed="0.012594"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.858353" elapsed="0.022336"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.858070" elapsed="0.022675"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:49.759885" elapsed="2.120947"/>
+</kw>
+<kw name="Go To Checkout (modal-safe)">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:51.885153" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.881527" elapsed="0.003744"/>
+</kw>
+<msg time="2025-10-23T21:39:51.885376" level="INFO">${modal_open} = True</msg>
+<var>${modal_open}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.881384" elapsed="0.004037"/>
+</kw>
+<if>
+<branch type="IF" condition="${modal_open}">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:52.032198" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:39:52.032472" level="FAIL">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</msg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:39:51.885793" elapsed="0.148572">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:39:52.034573" level="INFO">${has_cta} = False</msg>
+<var>${has_cta}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:39:51.885663" elapsed="0.148972"/>
+</kw>
+<if>
+<branch type="IF" condition="${has_cta}">
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:39:52.034922" elapsed="0.000063"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:39:52.035089" elapsed="0.000053"/>
+</kw>
+<return>
+<status status="NOT RUN" start="2025-10-23T21:39:52.035203" elapsed="0.000057"/>
+</return>
+<status status="NOT RUN" start="2025-10-23T21:39:52.034745" elapsed="0.000565"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:39:52.034720" elapsed="0.000639"/>
+</if>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:52.035822" level="INFO">Sending key(s) ('ESCAPE',) to xpath=//body element.</msg>
+<msg time="2025-10-23T21:39:52.313783" level="INFO">Pressing special key ESCAPE to element.</msg>
+<msg time="2025-10-23T21:39:52.313981" level="INFO">Releasing special key ESCAPE.</msg>
+<arg>xpath=//body</arg>
+<arg>ESCAPE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:39:52.035415" elapsed="0.285978"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:52.321610" elapsed="0.417143"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:51.885516" elapsed="0.853385"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:39:51.885492" elapsed="0.853482"/>
+</if>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-23T21:39:52.739074" elapsed="0.276438"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.015843" elapsed="0.026356"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:53.042863" level="INFO">Clicking button 'css=button.checkout-btn[data-request*="onProceedToCheckout"]'.</msg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.042521" elapsed="0.061677"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.104867" elapsed="0.683430"/>
+</kw>
+<msg time="2025-10-23T21:39:53.788560" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOC_FIRST}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.104573" elapsed="0.684099"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${ok}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.querySelector("button.checkout-btn[data-request*='onProceedToCheckout']").click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-10-23T21:39:53.789485" elapsed="0.000234"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:39:53.790030" elapsed="0.000169"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:39:53.788954" elapsed="0.001460"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:39:53.788862" elapsed="0.001658"/>
+</if>
+<status status="PASS" start="2025-10-23T21:39:51.881147" elapsed="1.909425"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:49.759582" elapsed="4.031062"/>
+</kw>
+<kw name="Submit Confirm">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.791980" elapsed="0.015407"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:53.808268" level="INFO">Clicking button 'css=button.checkout-btn[data-checkout-control="confirm-checkout"]'.</msg>
+<arg>${LOC_CONFIRM_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.807849" elapsed="0.050734"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:54.011580" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:39:54.011901" level="FAIL">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</msg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:39:53.859327" elapsed="0.154448">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.859193" elapsed="0.155046"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:54.481859" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:39:54.482082" level="FAIL">Page should have contained element 'css=[aria-invalid="true"]' but did not.</msg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:39:54.015194" elapsed="0.467796">Page should have contained element 'css=[aria-invalid="true"]' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.014864" elapsed="0.468457"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:54.669228" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:39:54.669551" level="FAIL">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</msg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:39:54.483860" elapsed="0.186656">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.483573" elapsed="0.187083"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:54.840291" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:39:54.840511" level="FAIL">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</msg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:39:54.671074" elapsed="0.170214">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.670841" elapsed="0.170670"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.859044" elapsed="0.982557"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:39:53.858800" elapsed="0.982902"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:53.791387" elapsed="1.050422"/>
+</kw>
+<kw name="Assert Required Messages">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-10-23T21:39:54.842709" level="INFO">${expected} = ['The First Name field is required.', 'The Last Name field is required.', 'The Email field is required.', 'The Address 1 field is required.']</msg>
+<var>${expected}</var>
+<arg>The First Name field is required.</arg>
+<arg>The Last Name field is required.</arg>
+<arg>The Email field is required.</arg>
+<arg>The Address 1 field is required.</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.842544" elapsed="0.000242"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.842890" elapsed="0.005974"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.849153" elapsed="0.004139"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${msg}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.853815" elapsed="0.020637"/>
+</kw>
+<var name="${msg}">The First Name field is required.</var>
+<status status="PASS" start="2025-10-23T21:39:54.853668" elapsed="0.021128"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${msg}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.875625" elapsed="0.008586"/>
+</kw>
+<var name="${msg}">The Last Name field is required.</var>
+<status status="PASS" start="2025-10-23T21:39:54.875206" elapsed="0.009352"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${msg}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.885269" elapsed="0.009275"/>
+</kw>
+<var name="${msg}">The Email field is required.</var>
+<status status="PASS" start="2025-10-23T21:39:54.884927" elapsed="0.009952"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${msg}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.895655" elapsed="0.009074"/>
+</kw>
+<var name="${msg}">The Address 1 field is required.</var>
+<status status="PASS" start="2025-10-23T21:39:54.895271" elapsed="0.009811"/>
+</iter>
+<var>${msg}</var>
+<value>@{expected}</value>
+<status status="PASS" start="2025-10-23T21:39:54.853446" elapsed="0.051869"/>
+</for>
+<status status="PASS" start="2025-10-23T21:39:54.842304" elapsed="0.063251"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.906758" elapsed="0.000167"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.907046" elapsed="2.161264"/>
+</kw>
+<arg>Run Keyword If</arg>
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:39:54.906525" elapsed="2.162170"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:47.501153" elapsed="9.569510"/>
+</test>
+<test id="s1-t2" name="Invalid Email Format → Show Validation" line="177">
+<kw name="Open Menus Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:57.072948" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/default/menus'.</msg>
+<arg>${MENUS_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:39:57.072757" elapsed="2.194409"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.267696" elapsed="0.058005"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.325920" elapsed="0.011372"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:59.347952" level="INFO">Current page contains element 'css=button.btn-cart'.</msg>
+<arg>css=button.btn-cart</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.338012" elapsed="0.010334"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>css=button.btn-cart</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.337654" elapsed="0.010887"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:57.072510" elapsed="2.276207"/>
+</kw>
+<kw name="Start Checkout Fresh">
+<kw name="Add Puff Puff To Cart (with settle)">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_ADD_PUFF}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.350640" elapsed="0.021341"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:39:59.373093" level="INFO">Clicking element 'css=button.btn-cart[data-menu-id="1"]'.</msg>
+<arg>${LOC_ADD_PUFF}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.372567" elapsed="0.064860"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:40:01.439079" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:39:59.437848" elapsed="2.001650"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:01.453078" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.441417" elapsed="0.011976"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.441043" elapsed="0.012571"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.454237" elapsed="0.045374"/>
+</kw>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.454031" elapsed="0.045867"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.440655" elapsed="0.059457"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.440047" elapsed="0.060282"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:59.350336" elapsed="2.150275"/>
+</kw>
+<kw name="Go To Checkout (modal-safe)">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:01.508118" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.502347" elapsed="0.006116"/>
+</kw>
+<msg time="2025-10-23T21:40:01.508794" level="INFO">${modal_open} = True</msg>
+<var>${modal_open}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.501932" elapsed="0.007004"/>
+</kw>
+<if>
+<branch type="IF" condition="${modal_open}">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:01.667778" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:01.667967" level="FAIL">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</msg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:01.510055" elapsed="0.158658">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:01.668894" level="INFO">${has_cta} = False</msg>
+<var>${has_cta}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.509657" elapsed="0.159300"/>
+</kw>
+<if>
+<branch type="IF" condition="${has_cta}">
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:01.669232" elapsed="0.000074"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:01.669409" elapsed="0.000052"/>
+</kw>
+<return>
+<status status="NOT RUN" start="2025-10-23T21:40:01.669527" elapsed="0.000052"/>
+</return>
+<status status="NOT RUN" start="2025-10-23T21:40:01.669063" elapsed="0.000587"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:40:01.669041" elapsed="0.000669"/>
+</if>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:01.670074" level="INFO">Sending key(s) ('ESCAPE',) to xpath=//body element.</msg>
+<msg time="2025-10-23T21:40:01.941423" level="INFO">Pressing special key ESCAPE to element.</msg>
+<msg time="2025-10-23T21:40:01.941601" level="INFO">Releasing special key ESCAPE.</msg>
+<arg>xpath=//body</arg>
+<arg>ESCAPE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.669770" elapsed="0.278278"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:01.948419" elapsed="0.418677"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:01.509211" elapsed="0.858107"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:40:01.509161" elapsed="0.858273"/>
+</if>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-23T21:40:02.367582" elapsed="0.269934"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:40:02.637824" elapsed="0.014172"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:02.652475" level="INFO">Clicking button 'css=button.checkout-btn[data-request*="onProceedToCheckout"]'.</msg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:02.652215" elapsed="0.043488"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:02.696655" elapsed="0.726992"/>
+</kw>
+<msg time="2025-10-23T21:40:03.423958" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOC_FIRST}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:02.696059" elapsed="0.728005"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${ok}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.querySelector("button.checkout-btn[data-request*='onProceedToCheckout']").click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:03.424576" elapsed="0.000111"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:03.424877" elapsed="0.000108"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:40:03.424248" elapsed="0.001126"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:40:03.424209" elapsed="0.001292"/>
+</if>
+<status status="PASS" start="2025-10-23T21:40:01.501320" elapsed="1.924300"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:59.349866" elapsed="4.075873"/>
+</kw>
+<kw name="Fill Checkout Form">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:03.427297" elapsed="0.006217"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:03.434086" level="INFO">Typing text 'Test' into text field 'id=first-name'.</msg>
+<arg>${LOC_FIRST}</arg>
+<arg>${first}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:03.433795" elapsed="0.057635"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:03.492247" level="INFO">Typing text 'Guest' into text field 'id=last-name'.</msg>
+<arg>${LOC_LAST}</arg>
+<arg>${last}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:03.491803" elapsed="0.068090"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:03.560669" level="INFO">Typing text 'not-an-email' into text field 'id=email'.</msg>
+<arg>${LOC_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:03.560249" elapsed="0.092475"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:03.653223" level="INFO">Clicking element 'id=telephone'.</msg>
+<arg>${LOC_TEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:03.652951" elapsed="0.066084"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:03.719883" level="INFO">Sending key(s) ('CTRL+A',) to id=telephone element.</msg>
+<msg time="2025-10-23T21:40:03.996193" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2025-10-23T21:40:03.996368" level="INFO">Sending key A</msg>
+<msg time="2025-10-23T21:40:03.996426" level="INFO">Releasing special key CONTROL.</msg>
+<arg>${LOC_TEL}</arg>
+<arg>CTRL+A</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:03.719361" elapsed="0.282019"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.002064" level="INFO">Typing text '+61400123456' into text field 'id=telephone'.</msg>
+<arg>${LOC_TEL}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.001700" elapsed="0.036622"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.038829" level="INFO">Typing text '10 Test Street' into text field 'xpath=//input[@name="address[address_1]"]'.</msg>
+<arg>${LOC_ADDR1}</arg>
+<arg>${addr1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.038566" elapsed="0.052887"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.099227" level="INFO">Current page contains element 'xpath=//input[@name="address[address_2]"]'.</msg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.091878" elapsed="0.007664"/>
+</kw>
+<msg time="2025-10-23T21:40:04.099772" level="INFO">${has_a2} = True</msg>
+<var>${has_a2}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.091676" elapsed="0.008213"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.101037" level="INFO">Typing text 'Unit 2' into text field 'xpath=//input[@name="address[address_2]"]'.</msg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<arg>${addr2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.100662" elapsed="0.055851"/>
+</kw>
+<arg>${has_a2}</arg>
+<arg>Input Text</arg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<arg>${addr2}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.100154" elapsed="0.056656"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.282087" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:04.282280" level="FAIL">Page should have contained element 'xpath=(//input[@name="address[address_1]"])[2]' but did not.</msg>
+<arg>${LOC_ADDR2_ALT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:04.157353" elapsed="0.125423">Page should have contained element 'xpath=(//input[@name="address[address_1]"])[2]' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:04.282933" level="INFO">${has_a2b} = False</msg>
+<var>${has_a2b}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_ADDR2_ALT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.157063" elapsed="0.125944"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${has_a2b}</arg>
+<arg>Input Text</arg>
+<arg>${LOC_ADDR2_ALT}</arg>
+<arg>${addr2}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.283194" elapsed="0.000214"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.283940" level="INFO">Typing text 'Sydney' into text field 'xpath=//input[@name="address[city]"]'.</msg>
+<arg>${LOC_CITY}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.283611" elapsed="0.053039"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.337384" level="INFO">Typing text 'NSW' into text field 'xpath=//input[@name="address[state]"]'.</msg>
+<arg>${LOC_STATE}</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.336985" elapsed="0.048190"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.385926" level="INFO">Typing text '2000' into text field 'xpath=//input[@name="address[postcode]"]'.</msg>
+<arg>${LOC_POSTCODE}</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.385523" elapsed="0.048069"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.434466" level="INFO">Sending key(s) ('TAB',) to id=email element.</msg>
+<msg time="2025-10-23T21:40:04.725649" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2025-10-23T21:40:04.725981" level="INFO">Releasing special key TAB.</msg>
+<arg>${LOC_EMAIL}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.433936" elapsed="0.303666"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:04.738692" level="INFO">Sending key(s) ('TAB',) to xpath=//input[@name="address[address_1]"] element.</msg>
+<msg time="2025-10-23T21:40:05.015722" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2025-10-23T21:40:05.015892" level="INFO">Releasing special key TAB.</msg>
+<arg>${LOC_ADDR1}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:04.737985" elapsed="0.285342"/>
+</kw>
+<arg>${FIRST_OK}</arg>
+<arg>${LAST_OK}</arg>
+<arg>not-an-email</arg>
+<arg>${TEL_OK}</arg>
+<arg>${ADDR1_OK}</arg>
+<arg>${ADDR2_OK}</arg>
+<arg>${CITY_OK}</arg>
+<arg>${STATE_OK}</arg>
+<arg>${POSTCODE_OK}</arg>
+<status status="PASS" start="2025-10-23T21:40:03.426268" elapsed="1.597558"/>
+</kw>
+<kw name="Submit Confirm">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.024846" elapsed="0.011251"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:05.036561" level="INFO">Clicking button 'css=button.checkout-btn[data-checkout-control="confirm-checkout"]'.</msg>
+<arg>${LOC_CONFIRM_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.036328" elapsed="0.052494"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:05.231221" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:05.231431" level="FAIL">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</msg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:05.090022" elapsed="0.142238">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.089823" elapsed="0.142574"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:05.676069" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:05.676283" level="FAIL">Page should have contained element 'css=[aria-invalid="true"]' but did not.</msg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:05.232757" elapsed="0.444386">Page should have contained element 'css=[aria-invalid="true"]' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.232545" elapsed="0.445080"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:05.843051" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:05.843254" level="FAIL">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</msg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:05.678580" elapsed="0.165238">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.678142" elapsed="0.165799"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.010071" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.010447" level="FAIL">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</msg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:05.844243" elapsed="0.167351">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.844079" elapsed="0.167646"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.089542" elapsed="0.922246"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:40:05.089150" elapsed="0.922707"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:05.024437" elapsed="0.987500"/>
+</kw>
+<kw name="Assert Validation Visible And Still On Checkout">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.012973" elapsed="0.006918"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.020221" elapsed="0.006205"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.035226" level="INFO">Current page contains element 'css=.text-danger'.</msg>
+<arg>${VAL_ANY_1}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.027024" elapsed="0.008599"/>
+</kw>
+<msg time="2025-10-23T21:40:06.035838" level="INFO">${v1} = True</msg>
+<var>${v1}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_1}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.026730" elapsed="0.009191"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.183815" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.184185" level="FAIL">Page should have contained element 'css=.alert-danger' but did not.</msg>
+<arg>${VAL_ANY_2}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.036513" elapsed="0.148818">Page should have contained element 'css=.alert-danger' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.185635" level="INFO">${v2} = False</msg>
+<var>${v2}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_2}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.036152" elapsed="0.149631"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.307028" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.307526" level="FAIL">Page should have contained element 'css=.invalid-feedback' but did not.</msg>
+<arg>${VAL_ANY_3}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.186422" elapsed="0.121941">Page should have contained element 'css=.invalid-feedback' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.308528" level="INFO">${v3} = False</msg>
+<var>${v3}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_3}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.186058" elapsed="0.122533"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.316245" level="INFO">Current page contains element 'xpath=//*[contains(@class,'text-danger') or contains(@class,'invalid') or contains(@class,'help-block')]'.</msg>
+<arg>${VAL_ANY_4}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.308920" elapsed="0.007465"/>
+</kw>
+<msg time="2025-10-23T21:40:06.316496" level="INFO">${v4} = True</msg>
+<var>${v4}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_4}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.308728" elapsed="0.007815"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.433428" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.433636" level="FAIL">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</msg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.316810" elapsed="0.117406">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.434381" level="INFO">${v5} = False</msg>
+<var>${v5}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.316658" elapsed="0.117796"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.550327" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.550528" level="FAIL">Page should have contained element 'css=[aria-invalid="true"]' but did not.</msg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.434831" elapsed="0.116631">Page should have contained element 'css=[aria-invalid="true"]' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.551745" level="INFO">${v6} = False</msg>
+<var>${v6}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.434607" elapsed="0.117244"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.670500" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.670686" level="FAIL">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</msg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.552361" elapsed="0.118997">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.671527" level="INFO">${v7} = False</msg>
+<var>${v7}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.552083" elapsed="0.119504"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.787211" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.787398" level="FAIL">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</msg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.671892" elapsed="0.116035">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.788072" level="INFO">${v8} = False</msg>
+<var>${v8}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.671722" elapsed="0.116403"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="No Operation" owner="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.788645" elapsed="0.000112"/>
+</kw>
+<arg>${v1} or ${v2} or ${v3} or ${v4} or ${v5} or ${v6} or ${v7} or ${v8}</arg>
+<arg>No Operation</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>No validation markers visible after submit.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.788297" elapsed="0.000530"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:06.012681" elapsed="0.776233"/>
+</kw>
+<kw name="Assert Email Error Visible (robust)">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_EMAIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.790501" elapsed="0.006079"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Check Email Error Once">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.805702" level="INFO">Current page contains text 'The Email must be a valid email address.'.</msg>
+<arg>${EMAIL_INVALID_MSG}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.797349" elapsed="0.008488"/>
+</kw>
+<msg time="2025-10-23T21:40:06.805955" level="INFO">${by_text} = True</msg>
+<var>${by_text}</var>
+<arg>Page Should Contain</arg>
+<arg>${EMAIL_INVALID_MSG}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.797218" elapsed="0.008783"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.816172" level="INFO">Current page contains element 'xpath=//*[(@role='alert' or contains(@class,'alert') or contains(@class,'toast') or contains(@class,'swal2')) and contains(normalize-space(.), "The Email must be a valid email address.")]'.</msg>
+<arg>xpath=//*[(@role='alert' or contains(@class,'alert') or contains(@class,'toast') or contains(@class,'swal2')) and contains(normalize-space(.), "${EMAIL_INVALID_MSG}")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.806258" elapsed="0.010333"/>
+</kw>
+<msg time="2025-10-23T21:40:06.816871" level="INFO">${by_alert} = True</msg>
+<var>${by_alert}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[(@role='alert' or contains(@class,'alert') or contains(@class,'toast') or contains(@class,'swal2')) and contains(normalize-space(.), "${EMAIL_INVALID_MSG}")]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.806110" elapsed="0.010853"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.945708" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:06.945913" level="FAIL">Page should have contained element 'css=[data-validate-for="email"], [data-validate-error="email"], #email ~ .invalid-feedback' but did not.</msg>
+<arg>css=[data-validate-for="email"], [data-validate-error="email"], #email ~ .invalid-feedback</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:06.817565" elapsed="0.128878">Page should have contained element 'css=[data-validate-for="email"], [data-validate-error="email"], #email ~ .invalid-feedback' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:06.946607" level="INFO">${by_msg} = False</msg>
+<var>${by_msg}</var>
+<arg>Page Should Contain Element</arg>
+<arg>css=[data-validate-for="email"], [data-validate-error="email"], #email ~ .invalid-feedback</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.817199" elapsed="0.129467"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:06.973262" level="INFO">Current page contains element 'xpath=//*[.//*[@id='email' or @name='email']]//*[contains(@class,'invalid') or contains(@class,'text-danger') or contains(@class,'help-block')]'.</msg>
+<arg>xpath=//*[.//*[@id='email' or @name='email']]//*[contains(@class,'invalid') or contains(@class,'text-danger') or contains(@class,'help-block')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.946994" elapsed="0.026526"/>
+</kw>
+<msg time="2025-10-23T21:40:06.973752" level="INFO">${by_xpath} = True</msg>
+<var>${by_xpath}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[.//*[@id='email' or @name='email']]//*[contains(@class,'invalid') or contains(@class,'text-danger') or contains(@class,'help-block')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.946799" elapsed="0.027051"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="No Operation" owner="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.974437" elapsed="0.000269"/>
+</kw>
+<arg>${by_text} or ${by_alert} or ${by_msg} or ${by_xpath}</arg>
+<arg>No Operation</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Could not find email validation via popup, alert, or field-level marker.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.974027" elapsed="0.000752"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:06.797015" elapsed="0.177830"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Check Email Error Once</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.796781" elapsed="0.178114"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:06.789995" elapsed="0.184955"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.975953" elapsed="0.000177"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.976243" elapsed="2.146765"/>
+</kw>
+<arg>Run Keyword If</arg>
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:40:06.975775" elapsed="2.147480"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:39:57.071793" elapsed="12.051862"/>
+</test>
+<test id="s1-t3" name="Missing Address 1 Only → Show Validation" line="184">
+<kw name="Open Menus Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:09.125678" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/default/menus'.</msg>
+<arg>${MENUS_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:40:09.125498" elapsed="4.151196"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.277179" elapsed="0.030333"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.308187" elapsed="0.015611"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:13.331759" level="INFO">Current page contains element 'css=button.btn-cart'.</msg>
+<arg>css=button.btn-cart</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.324348" elapsed="0.007630"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>css=button.btn-cart</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.324142" elapsed="0.007988"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:09.125275" elapsed="4.206957"/>
+</kw>
+<kw name="Start Checkout Fresh">
+<kw name="Add Puff Puff To Cart (with settle)">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_ADD_PUFF}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.333777" elapsed="0.019112"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:13.353374" level="INFO">Clicking element 'css=button.btn-cart[data-menu-id="1"]'.</msg>
+<arg>${LOC_ADD_PUFF}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.353130" elapsed="0.076817"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:40:15.431465" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:40:13.430299" elapsed="2.001399"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:15.440812" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.432356" elapsed="0.008596"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.432196" elapsed="0.008838"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.441311" elapsed="0.011833"/>
+</kw>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.441153" elapsed="0.012121"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.432060" elapsed="0.021273"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.431845" elapsed="0.021545"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:13.333520" elapsed="2.119940"/>
+</kw>
+<kw name="Go To Checkout (modal-safe)">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:15.458317" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.454004" elapsed="0.004445"/>
+</kw>
+<msg time="2025-10-23T21:40:15.458563" level="INFO">${modal_open} = True</msg>
+<var>${modal_open}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.453875" elapsed="0.004732"/>
+</kw>
+<if>
+<branch type="IF" condition="${modal_open}">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:15.605100" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:15.605288" level="FAIL">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</msg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:15.458976" elapsed="0.146968">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:15.606123" level="INFO">${has_cta} = False</msg>
+<var>${has_cta}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.458843" elapsed="0.147331"/>
+</kw>
+<if>
+<branch type="IF" condition="${has_cta}">
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:15.606435" elapsed="0.000075"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:15.606619" elapsed="0.000052"/>
+</kw>
+<return>
+<status status="NOT RUN" start="2025-10-23T21:40:15.606732" elapsed="0.000046"/>
+</return>
+<status status="NOT RUN" start="2025-10-23T21:40:15.606275" elapsed="0.000574"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:40:15.606255" elapsed="0.000653"/>
+</if>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:15.607266" level="INFO">Sending key(s) ('ESCAPE',) to xpath=//body element.</msg>
+<msg time="2025-10-23T21:40:15.879006" level="INFO">Pressing special key ESCAPE to element.</msg>
+<msg time="2025-10-23T21:40:15.879180" level="INFO">Releasing special key ESCAPE.</msg>
+<arg>xpath=//body</arg>
+<arg>ESCAPE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.606973" elapsed="0.278519"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:15.885708" elapsed="0.416360"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:15.458698" elapsed="0.843505"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:40:15.458676" elapsed="0.843654"/>
+</if>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-23T21:40:16.302453" elapsed="0.270395"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:40:16.573050" elapsed="0.012046"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:16.585503" level="INFO">Clicking button 'css=button.checkout-btn[data-request*="onProceedToCheckout"]'.</msg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:16.585289" elapsed="0.043363"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:16.629063" elapsed="0.732063"/>
+</kw>
+<msg time="2025-10-23T21:40:17.361331" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOC_FIRST}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:16.628879" elapsed="0.732545"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${ok}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.querySelector("button.checkout-btn[data-request*='onProceedToCheckout']").click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:17.361753" elapsed="0.000064"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:40:17.361964" elapsed="0.000052"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:40:17.361541" elapsed="0.000524"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:40:17.361519" elapsed="0.000599"/>
+</if>
+<status status="PASS" start="2025-10-23T21:40:15.453661" elapsed="1.908503"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:13.333007" elapsed="4.029219"/>
+</kw>
+<kw name="Generate Unique Email">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-10-23T21:40:17.363407" level="INFO">${r} = vy5CoG</msg>
+<var>${r}</var>
+<arg>6</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.363107" elapsed="0.000477"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-23T21:40:17.364020" level="INFO">${email} = checkout.neg+vy5CoG@example.com</msg>
+<var>${email}</var>
+<arg>${EMAIL_PREFIX}+${r}@${EMAIL_DOMAIN}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.363756" elapsed="0.000344"/>
+</kw>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2025-10-23T21:40:17.364205" elapsed="0.000091"/>
+</return>
+<msg time="2025-10-23T21:40:17.364495" level="INFO">${email} = checkout.neg+vy5CoG@example.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2025-10-23T21:40:17.362801" elapsed="0.001761"/>
+</kw>
+<kw name="Fill Checkout Form">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.366762" elapsed="0.007802"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:17.375058" level="INFO">Typing text 'Test' into text field 'id=first-name'.</msg>
+<arg>${LOC_FIRST}</arg>
+<arg>${first}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.374803" elapsed="0.070265"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:17.445911" level="INFO">Typing text 'Guest' into text field 'id=last-name'.</msg>
+<arg>${LOC_LAST}</arg>
+<arg>${last}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.445473" elapsed="0.076781"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:17.522841" level="INFO">Typing text 'checkout.neg+vy5CoG@example.com' into text field 'id=email'.</msg>
+<arg>${LOC_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.522497" elapsed="0.137879"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:17.660886" level="INFO">Clicking element 'id=telephone'.</msg>
+<arg>${LOC_TEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.660623" elapsed="0.052502"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:17.713754" level="INFO">Sending key(s) ('CTRL+A',) to id=telephone element.</msg>
+<msg time="2025-10-23T21:40:17.993027" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2025-10-23T21:40:17.993193" level="INFO">Sending key A</msg>
+<msg time="2025-10-23T21:40:17.993248" level="INFO">Releasing special key CONTROL.</msg>
+<arg>${LOC_TEL}</arg>
+<arg>CTRL+A</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.713392" elapsed="0.286053"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:17.999882" level="INFO">Typing text '+61400123456' into text field 'id=telephone'.</msg>
+<arg>${LOC_TEL}</arg>
+<arg>${tel}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:17.999647" elapsed="0.038661"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.038764" level="INFO">Typing text '' into text field 'xpath=//input[@name="address[address_1]"]'.</msg>
+<arg>${LOC_ADDR1}</arg>
+<arg>${addr1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.038515" elapsed="0.039737"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.085830" level="INFO">Current page contains element 'xpath=//input[@name="address[address_2]"]'.</msg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.078637" elapsed="0.007468"/>
+</kw>
+<msg time="2025-10-23T21:40:18.086473" level="INFO">${has_a2} = True</msg>
+<var>${has_a2}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.078462" elapsed="0.008078"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.087121" level="INFO">Typing text 'Unit 2' into text field 'xpath=//input[@name="address[address_2]"]'.</msg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<arg>${addr2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.086928" elapsed="0.051508"/>
+</kw>
+<arg>${has_a2}</arg>
+<arg>Input Text</arg>
+<arg>${LOC_ADDR2_NAME}</arg>
+<arg>${addr2}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.086709" elapsed="0.051889"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.272021" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:18.272229" level="FAIL">Page should have contained element 'xpath=(//input[@name="address[address_1]"])[2]' but did not.</msg>
+<arg>${LOC_ADDR2_ALT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:18.139042" elapsed="0.133818">Page should have contained element 'xpath=(//input[@name="address[address_1]"])[2]' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:18.273035" level="INFO">${has_a2b} = False</msg>
+<var>${has_a2b}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_ADDR2_ALT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.138833" elapsed="0.134254"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${has_a2b}</arg>
+<arg>Input Text</arg>
+<arg>${LOC_ADDR2_ALT}</arg>
+<arg>${addr2}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.273240" elapsed="0.000167"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.273713" level="INFO">Typing text 'Sydney' into text field 'xpath=//input[@name="address[city]"]'.</msg>
+<arg>${LOC_CITY}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.273525" elapsed="0.088333"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.362605" level="INFO">Typing text 'NSW' into text field 'xpath=//input[@name="address[state]"]'.</msg>
+<arg>${LOC_STATE}</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.362211" elapsed="0.081026"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.444041" level="INFO">Typing text '2000' into text field 'xpath=//input[@name="address[postcode]"]'.</msg>
+<arg>${LOC_POSTCODE}</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.443587" elapsed="0.057238"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.501406" level="INFO">Sending key(s) ('TAB',) to id=email element.</msg>
+<msg time="2025-10-23T21:40:18.780649" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2025-10-23T21:40:18.780813" level="INFO">Releasing special key TAB.</msg>
+<arg>${LOC_EMAIL}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.501056" elapsed="0.292340"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:18.794090" level="INFO">Sending key(s) ('TAB',) to xpath=//input[@name="address[address_1]"] element.</msg>
+<msg time="2025-10-23T21:40:19.089147" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2025-10-23T21:40:19.089414" level="INFO">Releasing special key TAB.</msg>
+<arg>${LOC_ADDR1}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:18.793645" elapsed="0.307435"/>
+</kw>
+<arg>${FIRST_OK}</arg>
+<arg>${LAST_OK}</arg>
+<arg>${email}</arg>
+<arg>${TEL_OK}</arg>
+<arg>${EMPTY}</arg>
+<arg>${ADDR2_OK}</arg>
+<arg>${CITY_OK}</arg>
+<arg>${STATE_OK}</arg>
+<arg>${POSTCODE_OK}</arg>
+<status status="PASS" start="2025-10-23T21:40:17.365017" elapsed="1.736228"/>
+</kw>
+<kw name="Submit Confirm">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.102017" elapsed="0.015623"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:19.118129" level="INFO">Clicking button 'css=button.checkout-btn[data-checkout-control="confirm-checkout"]'.</msg>
+<arg>${LOC_CONFIRM_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.117868" elapsed="0.061664"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:19.313656" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:19.313899" level="FAIL">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</msg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:19.180265" elapsed="0.134324">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.180154" elapsed="0.134556"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:19.731770" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:19.732113" level="FAIL">Page should have contained element 'css=[aria-invalid="true"]' but did not.</msg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:19.315044" elapsed="0.418777">Page should have contained element 'css=[aria-invalid="true"]' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.314845" elapsed="0.419252"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:19.935414" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:19.935881" level="FAIL">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</msg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:19.734851" elapsed="0.202127">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.734409" elapsed="0.202868"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.098846" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.099087" level="FAIL">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</msg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:19.938197" elapsed="0.161451">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</status>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.937831" elapsed="0.161938"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.180006" elapsed="0.919826"/>
+</kw>
+<arg>20x</arg>
+<arg>500ms</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<arg>AND</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-10-23T21:40:19.179751" elapsed="0.920157"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:19.101720" elapsed="0.998274"/>
+</kw>
+<kw name="Assert Validation Visible And Still On Checkout">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.100959" elapsed="0.005560"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.106714" elapsed="0.007654"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.129681" level="INFO">Current page contains element 'css=.text-danger'.</msg>
+<arg>${VAL_ANY_1}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.115304" elapsed="0.014619"/>
+</kw>
+<msg time="2025-10-23T21:40:20.130098" level="INFO">${v1} = True</msg>
+<var>${v1}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_1}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.114838" elapsed="0.015333"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.279574" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-46.png"&gt;&lt;img src="selenium-screenshot-46.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.279851" level="FAIL">Page should have contained element 'css=.alert-danger' but did not.</msg>
+<arg>${VAL_ANY_2}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:20.130601" elapsed="0.149848">Page should have contained element 'css=.alert-danger' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:20.280587" level="INFO">${v2} = False</msg>
+<var>${v2}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_2}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.130353" elapsed="0.150292"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.395284" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-47.png"&gt;&lt;img src="selenium-screenshot-47.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.395632" level="FAIL">Page should have contained element 'css=.invalid-feedback' but did not.</msg>
+<arg>${VAL_ANY_3}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:20.280921" elapsed="0.116102">Page should have contained element 'css=.invalid-feedback' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:20.397356" level="INFO">${v3} = False</msg>
+<var>${v3}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_3}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.280770" elapsed="0.116717"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.409069" level="INFO">Current page contains element 'xpath=//*[contains(@class,'text-danger') or contains(@class,'invalid') or contains(@class,'help-block')]'.</msg>
+<arg>${VAL_ANY_4}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.398129" elapsed="0.011090"/>
+</kw>
+<msg time="2025-10-23T21:40:20.409344" level="INFO">${v4} = True</msg>
+<var>${v4}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_4}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.397773" elapsed="0.011614"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.520208" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.520509" level="FAIL">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</msg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:20.409672" elapsed="0.111905">Page should have contained element 'css=input.is-invalid, select.is-invalid, textarea.is-invalid' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:20.521862" level="INFO">${v5} = False</msg>
+<var>${v5}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_5}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.409507" elapsed="0.112467"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.633787" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-49.png"&gt;&lt;img src="selenium-screenshot-49.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.634019" level="FAIL">Page should have contained element 'css=[aria-invalid="true"]' but did not.</msg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:20.522474" elapsed="0.112159">Page should have contained element 'css=[aria-invalid="true"]' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:20.634834" level="INFO">${v6} = False</msg>
+<var>${v6}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_6}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.522176" elapsed="0.112711"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.752306" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-50.png"&gt;&lt;img src="selenium-screenshot-50.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.752555" level="FAIL">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</msg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:20.635180" elapsed="0.118215">Page should have contained element 'css=.invalid-feedback, .valid-feedback, [data-validate-for], [data-validate-error]' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:20.753594" level="INFO">${v7} = False</msg>
+<var>${v7}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_7}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.635017" elapsed="0.118647"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:40:20.869070" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-51.png"&gt;&lt;img src="selenium-screenshot-51.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:40:20.869261" level="FAIL">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</msg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:40:20.754063" elapsed="0.115902">Page should have contained element 'css=.alert.alert-danger, .alert-danger' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:40:20.870143" level="INFO">${v8} = False</msg>
+<var>${v8}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${VAL_ANY_8}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.753846" elapsed="0.116354"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="No Operation" owner="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.870646" elapsed="0.000105"/>
+</kw>
+<arg>${v1} or ${v2} or ${v3} or ${v4} or ${v5} or ${v6} or ${v7} or ${v8}</arg>
+<arg>No Operation</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>No validation markers visible after submit.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.870330" elapsed="0.000499"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:20.100676" elapsed="0.770227"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.871434" elapsed="0.000143"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.871689" elapsed="2.181350"/>
+</kw>
+<arg>Run Keyword If</arg>
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:40:20.871270" elapsed="2.181934"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:40:09.124815" elapsed="13.928759"/>
+</test>
+<doc>TastyIgniter - View Menu → Checkout Validations (representative negatives)</doc>
+<status status="PASS" start="2025-10-23T21:39:47.259144" elapsed="35.795309"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tastyigniter Menu Guest Invalid" id="s1" pass="3" fail="0" skip="0">Tastyigniter Menu Guest Invalid</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

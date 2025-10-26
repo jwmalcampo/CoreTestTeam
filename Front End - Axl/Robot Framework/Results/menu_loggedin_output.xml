@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-10-23T21:36:55.179568" rpa="false" schemaversion="5">
+<suite id="s1" name="Tastyigniter Menu Loggedin Valid" source="c:\Users\heyit\OneDrive\Documents\FINAL_AUTOROBOT\tastyigniter_menu_loggedin_valid.robot">
+<test id="s1-t1" name="Logged-in User Can Checkout From Menus (Happy Path + Prefill + Recent Orders)" line="165">
+<kw name="Open Login Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:36:55.418510" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:36:55.418258" elapsed="2.074673"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-23T21:36:57.493486" elapsed="0.030517"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_LOGIN_EMAIL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:36:57.524244" elapsed="0.008462"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:36:55.417736" elapsed="2.115161"/>
+</kw>
+<kw name="Login As Valid User">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:36:57.534096" level="INFO">Typing text 'jasmine_welch@gmail.com' into text field 'id=login-email'.</msg>
+<arg>${LOC_LOGIN_EMAIL}</arg>
+<arg>${USER_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:36:57.533754" elapsed="0.105078"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:36:57.640388" level="INFO">Typing text 'Eyeksel@060499' into text field 'id=login-password'.</msg>
+<arg>${LOC_LOGIN_PASS}</arg>
+<arg>${USER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:36:57.639502" elapsed="0.085249"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:36:57.725339" level="INFO">Clicking button 'xpath=//button[normalize-space(.)='Login']'.</msg>
+<arg>${LOC_LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:36:57.725020" elapsed="0.073977"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_MYACCOUNT_DD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:36:57.799237" elapsed="1.955030"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:36:57.533413" elapsed="2.221014"/>
+</kw>
+<kw name="Open Menus Page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:36:59.755239" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/default/menus'</msg>
+<arg>${MENUS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:36:59.755094" elapsed="4.872679"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:04.627981" elapsed="0.007677"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:36:59.754834" elapsed="4.881076"/>
+</kw>
+<kw name="Add Puff Puff To Cart (with settle)">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_ADD_PUFF}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:37:04.636767" elapsed="0.016654"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:04.654217" level="INFO">Clicking element 'css=button.btn-cart[data-menu-id="1"]'.</msg>
+<arg>${LOC_ADD_PUFF}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:04.653789" elapsed="0.046917"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:37:06.701595" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:37:04.700956" elapsed="2.000859"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:06.702196" elapsed="0.010235"/>
+</kw>
+<msg time="2025-10-23T21:37:06.712613" level="INFO">${ok1} = True</msg>
+<var>${ok1}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:37:06.702001" elapsed="0.010686"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_CART_BOX}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:06.712972" elapsed="0.007395"/>
+</kw>
+<msg time="2025-10-23T21:37:06.720711" level="INFO">${ok2} = True</msg>
+<var>${ok2}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOC_CART_BOX}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:37:06.712812" elapsed="0.007980"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:12.017807" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:37:12.018051" level="FAIL">Element 'css=#cart-box-subtotal' did not appear in 5 seconds.</msg>
+<arg>${LOC_CART_SUBTOTAL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:37:06.721189" elapsed="5.310379">Element 'css=#cart-box-subtotal' did not appear in 5 seconds.</status>
+</kw>
+<msg time="2025-10-23T21:37:12.031812" level="INFO">${ok3} = False</msg>
+<var>${ok3}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOC_CART_SUBTOTAL}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:37:06.720927" elapsed="5.310996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not (${ok1} or ${ok2} or ${ok3})</arg>
+<arg>Fail</arg>
+<arg>Cart UI did not appear after adding item.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:37:12.032088" elapsed="0.000277"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:37:04.636485" elapsed="7.395984"/>
+</kw>
+<kw name="Go To Checkout">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:12.038433" level="INFO">Current page contains element 'css=#cart-box-modal.show'.</msg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:12.033371" elapsed="0.005235"/>
+</kw>
+<msg time="2025-10-23T21:37:12.038754" level="INFO">${modal_open} = True</msg>
+<var>${modal_open}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:37:12.033191" elapsed="0.005620"/>
+</kw>
+<if>
+<branch type="IF" condition="${modal_open}">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:12.179607" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:37:12.179846" level="FAIL">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</msg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:37:12.039499" elapsed="0.141679">Page should have contained element 'css=#cart-box-modal.show .checkout-btn' but did not.</status>
+</kw>
+<msg time="2025-10-23T21:37:12.181376" level="INFO">${has_cta} = False</msg>
+<var>${has_cta}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:37:12.039329" elapsed="0.142122"/>
+</kw>
+<if>
+<branch type="IF" condition="${has_cta}">
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL_CTA}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:12.181753" elapsed="0.000075"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:12.181962" elapsed="0.000058"/>
+</kw>
+<return>
+<status status="NOT RUN" start="2025-10-23T21:37:12.182083" elapsed="0.000059"/>
+</return>
+<status status="NOT RUN" start="2025-10-23T21:37:12.181581" elapsed="0.000625"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:12.181553" elapsed="0.000708"/>
+</if>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:12.182667" level="INFO">Sending key(s) ('ESCAPE',) to xpath=//body element.</msg>
+<msg time="2025-10-23T21:37:12.467175" level="INFO">Pressing special key ESCAPE to element.</msg>
+<msg time="2025-10-23T21:37:12.467446" level="INFO">Releasing special key ESCAPE.</msg>
+<arg>xpath=//body</arg>
+<arg>ESCAPE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:37:12.182324" elapsed="0.290202"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${LOC_CART_MODAL}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:12.472756" elapsed="1.874373"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:37:12.039112" elapsed="2.308170"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:12.039073" elapsed="2.308285"/>
+</if>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-23T21:37:14.347455" elapsed="0.275984"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-23T21:37:14.623636" elapsed="0.016809"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:14.641451" level="INFO">Clicking button 'css=button.checkout-btn[data-request*='onProceedToCheckout']'.</msg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:14.641158" elapsed="0.050131"/>
+</kw>
+<msg time="2025-10-23T21:37:14.691476" level="INFO">${clicked} = True</msg>
+<var>${clicked}</var>
+<arg>Click Button</arg>
+<arg>${LOC_CHECKOUT_BTN}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:37:14.640851" elapsed="0.050718"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${clicked}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>(function(){</arg>
+<arg>var btn = document.querySelector("button.checkout-btn[data-request*='onProceedToCheckout']");</arg>
+<arg>if (btn) btn.click();</arg>
+<arg>})();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:14.700180" elapsed="0.000159"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:37:14.691684" elapsed="0.008822"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:14.691660" elapsed="0.008967"/>
+</if>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:14.700898" elapsed="3.537103"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:37:12.032952" elapsed="6.205219"/>
+</kw>
+<kw name="Assert Prefilled Fields (Logged-in)">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:18.256864" level="INFO">${email_val} = jasmine_welch@gmail.com</msg>
+<var>${email_val}</var>
+<arg>${LOC_EMAIL}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.239199" elapsed="0.017959"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${email_val}</arg>
+<arg>${USER_EMAIL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.257482" elapsed="0.000258"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:18.278792" level="INFO">${a1} = 10 Test Street</msg>
+<var>${a1}</var>
+<arg>${LOC_ADDR1}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.257872" elapsed="0.021131"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:18.297092" level="INFO">${city} = Sydney</msg>
+<var>${city}</var>
+<arg>${LOC_CITY}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.279245" elapsed="0.018117"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:18.314129" level="INFO">${st} = NSW</msg>
+<var>${st}</var>
+<arg>${LOC_STATE}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.297640" elapsed="0.016685"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:18.332967" level="INFO">${pc} = 2000</msg>
+<var>${pc}</var>
+<arg>${LOC_POSTCODE}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.314557" elapsed="0.018629"/>
+</kw>
+<if>
+<branch type="IF" condition="'${a1}'==''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${LOC_ADDR1}</arg>
+<arg>${ADDR1_OK}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:18.333707" elapsed="0.000099"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:37:18.333387" elapsed="0.000515"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:18.333355" elapsed="0.000633"/>
+</if>
+<if>
+<branch type="IF" condition="'${city}'==''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${LOC_CITY}</arg>
+<arg>${CITY_OK}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:18.335173" elapsed="0.000107"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:37:18.334082" elapsed="0.001305"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:18.334054" elapsed="0.001445"/>
+</if>
+<if>
+<branch type="IF" condition="'${st}'==''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${LOC_STATE}</arg>
+<arg>${STATE_OK}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:18.335816" elapsed="0.000111"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:37:18.335569" elapsed="0.000468"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:18.335547" elapsed="0.000577"/>
+</if>
+<if>
+<branch type="IF" condition="'${pc}'==''">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${LOC_POSTCODE}</arg>
+<arg>${POSTCODE_OK}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-10-23T21:37:18.336469" elapsed="0.000100"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:37:18.336190" elapsed="0.000494"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:37:18.336171" elapsed="0.000609"/>
+</if>
+<doc>Email should be prefilled with the logged-in account. Fill missing address fields if empty.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.238722" elapsed="0.098129"/>
+</kw>
+<kw name="Confirm Order And Capture Number">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_CONFIRM_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.337734" elapsed="0.015702"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:18.354208" level="INFO">Clicking button 'css=button.checkout-btn[data-checkout-control='confirm-checkout']'.</msg>
+<arg>${LOC_CONFIRM_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.353805" elapsed="0.071749"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_ORDER_H}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.425783" elapsed="1.920249"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_SUCCESS_LEAD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.346368" elapsed="0.007510"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:20.370057" level="INFO">${hdr} = Order #19</msg>
+<var>${hdr}</var>
+<arg>${LOC_ORDER_H}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.354087" elapsed="0.016198"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-23T21:37:20.370929" level="INFO">ORDER HEADER: Order #19</msg>
+<arg>ORDER HEADER: ${hdr}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.370536" elapsed="0.000597"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-23T21:37:20.372278" level="INFO">${num} = 19</msg>
+<var>${num}</var>
+<arg>${hdr}</arg>
+<arg>Order #</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.371422" elapsed="0.001012"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-10-23T21:37:20.372974" level="INFO">${num} = 19</msg>
+<var>${num}</var>
+<arg>${num}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.372657" elapsed="0.000439"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-23T21:37:20.374409" level="INFO">${ORDER_NUMBER} = 19</msg>
+<arg>${ORDER_NUMBER}</arg>
+<arg>${num}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.373327" elapsed="0.001240"/>
+</kw>
+<doc>Confirm order, assert success page, capture order number, and store for later checks.</doc>
+<status status="PASS" start="2025-10-23T21:37:18.337467" elapsed="2.037254"/>
+</kw>
+<kw name="Assert Order Appears In Recent Orders">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:20.375919" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/account/orders'</msg>
+<arg>${RECENT_ORDERS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.375785" elapsed="0.426385"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@class,'btn') and contains(normalize-space(.),'View/Reorder')])[1]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.802418" elapsed="0.017157"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:20.820466" level="INFO">Clicking element 'xpath=(//a[contains(@class,'btn') and contains(normalize-space(.),'View/Reorder')])[1]'.</msg>
+<arg>xpath=(//a[contains(@class,'btn') and contains(normalize-space(.),'View/Reorder')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.819985" elapsed="0.423563"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOC_ORDER_H}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.243887" elapsed="0.016330"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:37:21.277451" level="INFO">${hdr} = Order #19</msg>
+<var>${hdr}</var>
+<arg>${LOC_ORDER_H}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.260582" elapsed="0.017057"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-10-23T21:37:21.278519" level="INFO">${num} = 19</msg>
+<var>${num}</var>
+<arg>${hdr}</arg>
+<arg>Order #</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.277868" elapsed="0.000742"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-10-23T21:37:21.279089" level="INFO">${num} = 19</msg>
+<var>${num}</var>
+<arg>${num}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.278784" elapsed="0.000478"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${num}</arg>
+<arg>${ORDER_NUMBER}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.279534" elapsed="0.000434"/>
+</kw>
+<doc>Go to Recent Orders, open the newest order via “View/Reorder”, and assert it matches the captured order number.</doc>
+<status status="PASS" start="2025-10-23T21:37:20.375468" elapsed="0.904711"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.281794" elapsed="0.000236"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.282183" elapsed="2.205750"/>
+</kw>
+<arg>Run Keyword If</arg>
+<arg>'${TEST STATUS}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-10-23T21:37:21.281556" elapsed="2.206617"/>
+</kw>
+<doc>Login → menus → add item → checkout → confirm → verify Recent Orders lists the order.</doc>
+<status status="PASS" start="2025-10-23T21:36:55.417148" elapsed="28.071901"/>
+</test>
+<doc>TastyIgniter - Logged-in user can order from Menu (Happy Path + prefill checks + Recent Orders assertion)</doc>
+<status status="PASS" start="2025-10-23T21:36:55.182532" elapsed="28.307851"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tastyigniter Menu Loggedin Valid" id="s1" pass="1" fail="0" skip="0">Tastyigniter Menu Loggedin Valid</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

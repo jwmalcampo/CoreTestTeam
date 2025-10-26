@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-10-23T21:43:28.406936" rpa="false" schemaversion="5">
+<suite id="s1" name="Tastyigniter Edit Invalid" source="c:\Users\heyit\OneDrive\Documents\FINAL_AUTOROBOT\tastyigniter_edit_invalid.robot">
+<kw name="Open Browser And Go Directly To My Account" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:28.648410" level="INFO">Opening browser 'chrome' to base url 'http://localhost/TastyIgniter_v3/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:43:28.648164" elapsed="2.055547"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-23T21:43:30.704049" elapsed="0.024570"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=login-email</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:43:30.728835" elapsed="0.039474"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:30.769323" level="INFO">Typing text 'jasmine_welch@gmail.com' into text field 'id=login-email'.</msg>
+<arg>id=login-email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:30.768797" elapsed="0.141286"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:30.910656" level="INFO">Typing text 'Eyeksel@060499' into text field 'id=login-password'.</msg>
+<arg>id=login-password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:30.910380" elapsed="0.061908"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:30.972867" level="INFO">Clicking button 'css=button[type="submit"]'.</msg>
+<arg>css=button[type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:30.972557" elapsed="0.051572"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=a.nav-link.dropdown-toggle</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:43:31.024339" elapsed="1.799775"/>
+</kw>
+<kw name="Navigate To First Working Account URL">
+<for flavor="IN">
+<iter>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:32.825092" level="INFO">Opening url 'http://localhost/TastyIgniter_v3/account'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-23T21:43:32.824961" elapsed="0.501475"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.326909" elapsed="0.013674"/>
+</kw>
+<msg time="2025-10-23T21:43:33.340783" level="INFO">${ok} = True</msg>
+<var>${ok}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${LOC_FIRST}</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.326687" elapsed="0.014170"/>
+</kw>
+<if>
+<branch type="IF" condition="${ok}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Using account URL: ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.341151" elapsed="0.000435"/>
+</kw>
+<return>
+<status status="PASS" start="2025-10-23T21:43:33.341714" elapsed="0.000106"/>
+</return>
+<status status="PASS" start="2025-10-23T21:43:33.340976" elapsed="0.000933"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:43:33.340948" elapsed="0.001026"/>
+</if>
+<var name="${url}">http://localhost/TastyIgniter_v3/account</var>
+<status status="PASS" start="2025-10-23T21:43:32.824851" elapsed="0.517151"/>
+</iter>
+<var>${url}</var>
+<value>@{ACCOUNT_CANDIDATES}</value>
+<status status="PASS" start="2025-10-23T21:43:32.824646" elapsed="0.517422"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Could not reach My Account page using any candidates: ${ACCOUNT_CANDIDATES}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-23T21:43:33.342229" elapsed="0.000066"/>
+</kw>
+<doc>Iterate through known account URLs; stop at the first that loads the form.</doc>
+<status status="PASS" start="2025-10-23T21:43:32.824458" elapsed="0.517933"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.342492" elapsed="0.009530"/>
+</kw>
+<doc>Login, then hit account page directly (bypasses dropdown/hover entirely).</doc>
+<status status="PASS" start="2025-10-23T21:43:28.647677" elapsed="4.704507"/>
+</kw>
+<test id="s1-t1" name="Missing First Name → Shows Required Message" line="77">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${LOC_FIRST}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.352958" elapsed="0.023878"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:33.377541" level="INFO">Typing text 'Welch' into text field 'name=last_name'.</msg>
+<arg>${LOC_LAST}</arg>
+<arg>Welch</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.377246" elapsed="0.060961"/>
+</kw>
+<kw name="Save Changes">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:33.439236" level="INFO">Clicking button 'css=button.btn.btn-primary[type="submit"]'.</msg>
+<arg>${LOC_SAVE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.439039" elapsed="0.055620"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:43:34.495611" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.494951" elapsed="1.000882"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:33.438721" elapsed="1.057219"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>The First Name field is required.</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.496707" elapsed="0.011325"/>
+</kw>
+<msg time="2025-10-23T21:43:34.508264" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>The First Name field is required.</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.496478" elapsed="0.011867"/>
+</kw>
+<if>
+<branch type="IF" condition="${found}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The First Name field is required. message displayed.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.509473" elapsed="0.000244"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:34.509227" elapsed="0.000594"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Known issue: validation not triggered for missing first name on this build.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-10-23T21:43:34.510030" elapsed="0.000058"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:43:34.509890" elapsed="0.000362"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:43:34.509178" elapsed="0.001137"/>
+</if>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-10-23T21:43:34.643457" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-59.png"&gt;&lt;img src="selenium-screenshot-59.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.510894" elapsed="0.132766"/>
+</kw>
+<doc>Clear First Name; expect “The First Name field is required.” (if validation exists). Otherwise log known issue.</doc>
+<status status="PASS" start="2025-10-23T21:43:33.352287" elapsed="1.291964"/>
+</test>
+<test id="s1-t2" name="Missing Last Name → Shows Required Message" line="89">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:34.645790" level="INFO">Typing text 'Jasmine' into text field 'name=first_name'.</msg>
+<arg>${LOC_FIRST}</arg>
+<arg>Jasmine</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.645570" elapsed="0.052229"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${LOC_LAST}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.698514" elapsed="0.022750"/>
+</kw>
+<kw name="Save Changes">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:34.722860" level="INFO">Clicking button 'css=button.btn.btn-primary[type="submit"]'.</msg>
+<arg>${LOC_SAVE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.722531" elapsed="0.043511"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:43:35.767117" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:43:34.766252" elapsed="1.001078"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:34.722037" elapsed="1.045394"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>The Last Name field is required.</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.768237" elapsed="0.010950"/>
+</kw>
+<msg time="2025-10-23T21:43:35.779369" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>The Last Name field is required.</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.768048" elapsed="0.011382"/>
+</kw>
+<if>
+<branch type="IF" condition="${found}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The Last Name field is required. message displayed.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.779875" elapsed="0.000225"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:35.779697" elapsed="0.000499"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Known issue: validation not triggered for missing last name on this build.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-10-23T21:43:35.780384" elapsed="0.000056"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:43:35.780253" elapsed="0.000233"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:43:35.779672" elapsed="0.000857"/>
+</if>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-10-23T21:43:35.895423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-60.png"&gt;&lt;img src="selenium-screenshot-60.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.780867" elapsed="0.114777"/>
+</kw>
+<doc>Clear Last Name; expect “The Last Name field is required.”</doc>
+<status status="PASS" start="2025-10-23T21:43:34.645161" elapsed="1.251084"/>
+</test>
+<test id="s1-t3" name="Missing Telephone → Shows Required Message" line="101">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:35.897623" level="INFO">Typing text 'Jasmine' into text field 'name=first_name'.</msg>
+<arg>${LOC_FIRST}</arg>
+<arg>Jasmine</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.897417" elapsed="0.056663"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:35.955274" level="INFO">Typing text 'Welch' into text field 'name=last_name'.</msg>
+<arg>${LOC_LAST}</arg>
+<arg>Welch</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.954888" elapsed="0.055628"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:36.011384" level="INFO">Clicking element 'css=input[data-control="country-code-picker"]'.</msg>
+<arg>${LOC_PHONE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:36.011076" elapsed="0.054405"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:36.066805" level="INFO">Sending key(s) ('CTRL+A',) to css=input[data-control="country-code-picker"] element.</msg>
+<msg time="2025-10-23T21:43:36.345942" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2025-10-23T21:43:36.346117" level="INFO">Sending key A</msg>
+<msg time="2025-10-23T21:43:36.346179" level="INFO">Releasing special key CONTROL.</msg>
+<arg>${LOC_PHONE}</arg>
+<arg>CTRL+A</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:43:36.066289" elapsed="0.289539"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:36.356664" level="INFO">Sending key(s) ('BACKSPACE',) to css=input[data-control="country-code-picker"] element.</msg>
+<msg time="2025-10-23T21:43:36.631082" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2025-10-23T21:43:36.631256" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>${LOC_PHONE}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:43:36.356273" elapsed="0.285043"/>
+</kw>
+<kw name="Save Changes">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:36.642407" level="INFO">Clicking button 'css=button.btn.btn-primary[type="submit"]'.</msg>
+<arg>${LOC_SAVE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:36.642220" elapsed="0.041991"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:43:37.685002" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:43:36.684415" elapsed="1.000802"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:36.641957" elapsed="1.043361"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:42.808765" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-61.png"&gt;&lt;img src="selenium-screenshot-61.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:43:42.809177" level="FAIL">Text 'The Telephone field is required.' did not appear in 5 seconds.</msg>
+<arg>The Telephone field is required.</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-23T21:43:37.686190" elapsed="5.126225">Text 'The Telephone field is required.' did not appear in 5 seconds.</status>
+</kw>
+<msg time="2025-10-23T21:43:42.812986" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>The Telephone field is required.</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-23T21:43:37.685878" elapsed="5.127242"/>
+</kw>
+<if>
+<branch type="IF" condition="${found}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The Telephone field is required. message displayed.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-10-23T21:43:42.813909" elapsed="0.000110"/>
+</kw>
+<status status="NOT RUN" start="2025-10-23T21:43:42.813607" elapsed="0.000516"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Known issue: blank telephone accepted without validation on this build.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-23T21:43:42.814394" elapsed="0.000337"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:42.814223" elapsed="0.000668"/>
+</branch>
+<status status="PASS" start="2025-10-23T21:43:42.813570" elapsed="0.001445"/>
+</if>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-10-23T21:43:42.956084" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-62.png"&gt;&lt;img src="selenium-screenshot-62.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-23T21:43:42.815455" elapsed="0.141002"/>
+</kw>
+<doc>Blank phone should raise “The Telephone field is required.” If not, log known issue.</doc>
+<status status="PASS" start="2025-10-23T21:43:35.897054" elapsed="7.060021"/>
+</test>
+<test id="s1-t4" name="Password Mismatch → Shows Error" line="116">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:42.959307" level="INFO">Typing text 'Eyeksel@060499' into text field 'name=old_password'.</msg>
+<arg>${LOC_OLDPASS}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:42.958729" elapsed="0.088579"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:43.048354" level="INFO">Typing text 'NewPass123' into text field 'name=new_password'.</msg>
+<arg>${LOC_NEWPASS}</arg>
+<arg>NewPass123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:43.047908" elapsed="0.087262"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:43.136862" level="INFO">Typing text 'NewPass999' into text field 'name=confirm_new_password'.</msg>
+<arg>${LOC_CONFIRMPASS}</arg>
+<arg>NewPass999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:43.135852" elapsed="0.087702"/>
+</kw>
+<kw name="Save Changes">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:43.224997" level="INFO">Clicking button 'css=button.btn.btn-primary[type="submit"]'.</msg>
+<arg>${LOC_SAVE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:43.224648" elapsed="0.077408"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-23T21:43:44.302932" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-23T21:43:43.302402" elapsed="1.000849"/>
+</kw>
+<status status="PASS" start="2025-10-23T21:43:43.224155" elapsed="1.079217"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>The New Password and New Password Confirm must match.</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.304009" elapsed="0.012028"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-10-23T21:43:44.417225" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-63.png"&gt;&lt;img src="selenium-screenshot-63.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.316475" elapsed="0.101106"/>
+</kw>
+<doc>Mismatched new password/confirm should show “The New Password and New Password Confirm must match.”</doc>
+<status status="PASS" start="2025-10-23T21:43:42.957917" elapsed="1.460418"/>
+</test>
+<test id="s1-t5" name="Email Field Is Not Editable" line="124">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:44.434616" level="INFO">${before} = jasmine_welch@gmail.com</msg>
+<var>${before}</var>
+<arg>${LOC_EMAIL}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.421284" elapsed="0.013467"/>
+</kw>
+<kw name="Try Type In Readonly">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:44.435946" level="INFO">Clicking element 'name=email'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.435731" elapsed="0.048186"/>
+</kw>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.435576" elapsed="0.048583"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:44.485665" level="INFO">Sending key(s) ('CTRL+A',) to name=email element.</msg>
+<msg time="2025-10-23T21:43:44.755270" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2025-10-23T21:43:44.755407" level="INFO">Sending key A</msg>
+<msg time="2025-10-23T21:43:44.755456" level="INFO">Releasing special key CONTROL.</msg>
+<arg>${locator}</arg>
+<arg>CTRL+A</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.484884" elapsed="0.280264"/>
+</kw>
+<arg>Press Keys</arg>
+<arg>${locator}</arg>
+<arg>CTRL+A</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.484464" elapsed="0.280827"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:44.765819" level="INFO">Typing text 'change-me@example.com' into text field 'name=email'.</msg>
+<msg time="2025-10-23T21:43:44.899582" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-64.png"&gt;&lt;img src="selenium-screenshot-64.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T21:43:44.899999" level="FAIL">InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=141.0.7390.122)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6bfb2e8e5+80021]
+	GetHandleVerifier [0x0x7ff6bfb2e940+80112]
+	(No symbol) [0x0x7ff6bf8b060f]
+	(No symbol) [0x0x7ff6bf8b816a]
+	(No symbol) [0x0x7ff6bf8bb26f]
+	(No symbol) [0x0x7ff6bf8bb32f]
+	(No symbol) [0x0x7ff6bf8fe594]
+	(No symbol) [0x0x7ff6bf93122a]
+	(No symbol) [0x0x7ff6bf8fb056]
+	(No symbol) [0x0x7ff6bf931440]
+	(No symbol) [0x0x7ff6bf95968a]
+	(No symbol) [0x0x7ff6bf931003]
+	(No symbol) [0x0x7ff6bf8f95d1]
+	(No symbol) [0x0x7ff6bf8fa3f3]
+	GetHandleVerifier [0x0x7ff6bfdedc7d+2960429]
+	GetHandleVerifier [0x0x7ff6bfde7f3a+2936554]
+	GetHandleVerifier [0x0x7ff6bfe08977+3070247]
+	GetHandleVerifier [0x0x7ff6bfb483ce+185214]
+	GetHandleVerifier [0x0x7ff6bfb4fe1f+216527]
+	GetHandleVerifier [0x0x7ff6bfb37b24+117460]
+	GetHandleVerifier [0x0x7ff6bfb37cdf+117903]
+	GetHandleVerifier [0x0x7ff6bfb1dbb8+11112]
+	BaseThreadInitThunk [0x0x7ff9e585e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e62ec53c+44]
+</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-10-23T21:43:44.765614" elapsed="0.138800">InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=141.0.7390.122)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6bfb2e8e5+80021]
+	GetHandleVerifier [0x0x7ff6bfb2e940+80112]
+	(No symbol) [0x0x7ff6bf8b060f]
+	(No symbol) [0x0x7ff6bf8b816a]
+	(No symbol) [0x0x7ff6bf8bb26f]
+	(No symbol) [0x0x7ff6bf8bb32f]
+	(No symbol) [0x0x7ff6bf8fe594]
+	(No symbol) [0x0x7ff6bf93122a]
+	(No symbol) [0x0x7ff6bf8fb056]
+	(No symbol) [0x0x7ff6bf931440]
+	(No symbol) [0x0x7ff6bf95968a]
+	(No symbol) [0x0x7ff6bf931003]
+	(No symbol) [0x0x7ff6bf8f95d1]
+	(No symbol) [0x0x7ff6bf8fa3f3]
+	GetHandleVerifier [0x0x7ff6bfdedc7d+2960429]
+	GetHandleVerifier [0x0x7ff6bfde7f3a+2936554]
+	GetHandleVerifier [0x0x7ff6bfe08977+3070247]
+	GetHandleVerifier [0x0x7ff6bfb483ce+185214]
+	GetHandleVerifier [0x0x7ff6bfb4fe1f+216527]
+	GetHandleVerifier [0x0x7ff6bfb37b24+117460]
+	GetHandleVerifier [0x0x7ff6bfb37cdf+117903]
+	GetHandleVerifier [0x0x7ff6bfb1dbb8+11112]
+	BaseThreadInitThunk [0x0x7ff9e585e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e62ec53c+44]
+</status>
+</kw>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.765429" elapsed="0.139162"/>
+</kw>
+<arg>${LOC_EMAIL}</arg>
+<arg>change-me@example.com</arg>
+<status status="PASS" start="2025-10-23T21:43:44.435250" elapsed="0.469423"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-10-23T21:43:44.916135" level="INFO">${after} = jasmine_welch@gmail.com</msg>
+<var>${after}</var>
+<arg>${LOC_EMAIL}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.905237" elapsed="0.011097"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${before}</arg>
+<arg>${after}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.916883" elapsed="0.000238"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Email field remained unchanged as expected.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.917377" elapsed="0.000452"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-10-23T21:43:45.021481" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-65.png"&gt;&lt;img src="selenium-screenshot-65.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-10-23T21:43:44.918145" elapsed="0.103580"/>
+</kw>
+<doc>Email cannot be changed (readonly/disabled or ignored server-side).</doc>
+<status status="PASS" start="2025-10-23T21:43:44.420638" elapsed="0.601391"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-23T21:43:45.022920" elapsed="2.210820"/>
+</kw>
+<doc>Edit My Account – Negative validation tests (direct navigation; no dropdown).</doc>
+<status status="PASS" start="2025-10-23T21:43:28.411235" elapsed="18.822851"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tastyigniter Edit Invalid" id="s1" pass="5" fail="0" skip="0">Tastyigniter Edit Invalid</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
